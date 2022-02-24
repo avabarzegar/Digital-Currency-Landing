@@ -17,7 +17,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
 import StyledLink from './linkstyle';
 import logo from '../pictures/logo.png';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
