@@ -47,42 +47,52 @@ const TemporaryDrawer=() => {
     >
       <Divider style={{backgroundColor: '#ffffff1a'}} />
       <List>
-        {/* {['Markets', 'Exchange', 'Deposit', 'Withdraw' , 'Mobile App'].map((text, index) => ( */}
+          <Link to='Market'>
           <ListItem button style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <BarChartIcon />    
             </ListItemIcon>
             <ListItemText primary='Markets' />
           </ListItem>
+          </Link>
+          <Link to='Exchange' >
           <ListItem button style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
-              <BarChartIcon />
-              
+              <CurrencyExchangeIcon />
             </ListItemIcon>
             <ListItemText primary='Exchange' />
           </ListItem>
+          </Link>
+          <Link>
           <ListItem button style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
-              <BarChartIcon />
+              <AccountBalanceWalletOutlinedIcon />
               
             </ListItemIcon>
             <ListItemText primary='Deposit' />
+          
           </ListItem>
+          </Link>
+          <Link>
           <ListItem button style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
-              <BarChartIcon />
+              <AccountBalanceWalletOutlinedIcon />
               
             </ListItemIcon>
             <ListItemText primary='Withdraw' />
+          
           </ListItem>
+          </Link>
+          <Link>
           <ListItem button style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
-              <BarChartIcon />
+              <TipsAndUpdatesIcon />
               
             </ListItemIcon>
             <ListItemText primary='Mobile App' />
+          
           </ListItem>
-        
+        </Link>
       </List>
       <Divider style={{backgroundColor: '#ffffff1a'}} />
       <List>

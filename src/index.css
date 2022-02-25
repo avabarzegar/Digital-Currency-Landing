@@ -47,5 +47,21 @@ nav a:hover{
 .main {
   padding: 1rem;
 }
+.CustomBtn{
+  font-size: 1rem;
+    line-height: 1.5;
+    background: linear-gradient(180deg,#f8d12f,#f0b90b 99.77%);
+    border: none;
+    color: #212833;
+    padding: 0 14px;
+    margin: .5rem auto 1rem;
+    width: 80% !important;
+    border-radius: 4px;
+    
+}
+.CustomBtn:hover{
+ 
+  box-shadow: none;
+}
 
 /* /navbar */
