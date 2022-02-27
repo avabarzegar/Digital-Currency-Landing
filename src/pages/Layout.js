@@ -58,17 +58,6 @@ const App = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      {/* <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List> */}
-     
        <List>
           <ListItem button variant="text" component={Link} to="SignIn" style={{color : 'white'}}>
             <ListItemText sx={{textAlign:'center'}} primary='Sign in' />
@@ -123,14 +112,18 @@ const App = () => {
       </List>
       <Divider style={{backgroundColor: '#ffffff1a'}} />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button component={Link} to="/design" key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+      <ListItem button component={Link} to="Download" style={{color : 'white'}}>
+            <ListItemIcon style={{color:'#848e9c'}}>
+              <DownloadIcon />
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary='Download' />
           </ListItem>
-        ))}
+          <ListItem button component={Link} to="LanguageIcon" style={{color : 'white'}}>
+            <ListItemIcon style={{color:'#848e9c'}}>
+              <LanguageIcon />
+            </ListItemIcon>
+            <ListItemText primary='English | TRY' />
+          </ListItem>
       </List>
     </Box>
   );

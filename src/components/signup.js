@@ -11,6 +11,7 @@ const BootstrapButton = styled(Button)({
     lineHeight: 1.5,
     background: 'linear-gradient(180deg,#f8d12f,#f0b90b 99.77%)',
     border: 'none',
+    fontWeight:'600 !important',
     color: '#212833',
     padding: '6px 14px',
     fontFamily: [

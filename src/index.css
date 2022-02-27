@@ -4,13 +4,14 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: BinancePlex-Regular, Arial, PingFangSC-Regular, "Microsoft YaHei", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 auto;
   width: 100%;
+}
+a{
+  text-decoration: none !important;
 }
 
 code {
@@ -44,9 +45,6 @@ nav a {
 nav a:hover{
   color: #ccc;
 }
-.main {
-  padding: 1rem;
-}
 .CustomBtn{
   font-size: 1rem;
     line-height: 1.5;
@@ -65,3 +63,9 @@ nav a:hover{
 }
 
 /* /navbar */
+/* media-queries */
+/* @media screen and (min-width:0px) {
+  p{
+    font-size: ;
+  }
+} */
