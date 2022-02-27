@@ -24,8 +24,6 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
@@ -226,90 +224,9 @@ const App = () => {
         </React.Fragment>
       ))}
     </div>
-              {/* <div sx={{backgroundColor:'#12161c'}}>
-      {['right'].map((anchor) => (
-        <React.Fragment key={anchor}>
-          
-          <Button onClick={toggleDrawer(anchor, true)}>
-            <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            color="inherit"
-          >
-             <MenuIcon style={{color:'white'}} />
-            </IconButton>
-          </Button>
-          <Drawer
-         
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
-            <Box sx={{display: 'flex' , alignItems: 'center' , flexDirection: 'column'}}>
-             <Link href='#' button variant="text" sx={{mx: 2, my: 3, color: 'white',textDecoration: 'none'}}>Sign in</Link>      
-             <BootstrapButton  sx={{px:7, mb: 3}} variant="contained"  size='small'>
-              <Link sx={{color: 'black', textDecoration: 'none'}}>
-               Register
-              </Link>    
-             </BootstrapButton>
-            </Box>
-            {/* <List>
-          <Link to='Market'>
-          <ListItem button style={{color : 'white'}}>
-            <ListItemIcon style={{color:'#848e9c'}}>
-              <BarChartIcon />    
-            </ListItemIcon>
-            <ListItemText primary='Markets' />
-          </ListItem>
-          </Link>
-          <Link to='Exchange' >
-          <ListItem button style={{color : 'white'}}>
-            <ListItemIcon style={{color:'#848e9c'}}>
-              <CurrencyExchangeIcon />
-            </ListItemIcon>
-            <ListItemText primary='Exchange' />
-          </ListItem>
-          </Link>
-          <Link to='Deposit'>
-          <ListItem button style={{color : 'white'}}>
-            <ListItemIcon style={{color:'#848e9c'}}>
-              <AccountBalanceWalletOutlinedIcon />
-              
-            </ListItemIcon>
-            <ListItemText primary='Deposit' />
-          
-          </ListItem>
-          </Link>
-          <Link to='Withdraw'>
-          <ListItem button style={{color : 'white'}}>
-            <ListItemIcon style={{color:'#848e9c'}}>
-              <AccountBalanceWalletOutlinedIcon />
-              
-            </ListItemIcon>
-            <ListItemText primary='Withdraw' />
-          
-          </ListItem>
-          </Link>
-          <Link to='Mobile'>
-          <ListItem button style={{color : 'white'}}>
-            <ListItemIcon style={{color:'#848e9c'}}>
-              <TipsAndUpdatesIcon />
-              
-            </ListItemIcon>
-            <ListItemText primary='Mobile App' />
-          
-          </ListItem>
-        </Link>
-            </List> */}
-          {/* </Drawer>
-        </React.Fragment>
-      ))}
-    </div> */}
-            </div>             
-          </Grid>
-      </nav>
+    </div>             
+    </Grid>
+    </nav>
       <div className="main">
           <Routes>
           <Route path="/" element={<Home />}></Route>

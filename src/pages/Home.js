@@ -14,7 +14,7 @@ import homeImgFour from '../pictures/homeImgFour.jpg';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-
+import PriceTable from '../components/homeTable';
 
 
 
@@ -35,9 +35,9 @@ const Home = () => {
           <img src={HomeBg} alt='homeBg' width='100%'></img>
        </Container>
       </Box>
-      <Box>
+      <Box sx={{bgcolor:'#fafafa'}}>
         <Container>
-        <Grid container sx={{my:3 ,p:1}}>
+        <Grid container sx={{py:3 ,px:1}}>
           <Grid item xs={8}>
             <ThemeProvider theme={theme}>
             <Typography sx={{color:'black'}}>
@@ -75,6 +75,9 @@ const Home = () => {
            </Item>
           </Grid>
         </Grid>
+        <Box>
+          <PriceTable />
+        </Box>
         </Container>
       </Box>
      

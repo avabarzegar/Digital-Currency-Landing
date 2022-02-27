@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: BinancePlex-Regular, Arial, PingFangSC-Regular, "Microsoft YaHei", sans-serif;
+  font-family: BinancePlex-Regular, Arial, PingFangSC-Regular, "Microsoft YaHei", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 auto;
@@ -63,6 +63,35 @@ nav a:hover{
 }
 
 /* /navbar */
+/* home-pics */
+.css-zgbddb-MuiPaper-root{
+  background-color:#fafafa !important ;
+}
+/* /home-pics */
+
+/* table-price */
+.css-1ygcj2i-MuiTableCell-root {
+    color: #848e9c !important;
+    font-size: .9 !important;
+}
+.MuiBox-root-2 .MuiTypography-body {
+  font-size: 1.2rem !important;
+  
+}
+.css-apqrd9-MuiTableBody-root .css-34nofg-MuiTableRow-root:hover{
+background-color:#fafafa !important;
+}
+.buy-button{
+  background-color: #02c076;
+  padding: .5rem 1rem;
+  color: #fff;
+  border-radius: 5px;
+}
+.css-1ex1afd-MuiTableCell-root{
+  width: max-content !important;
+}
+/* /table-price */
+
 /* media-queries */
 /* @media screen and (min-width:0px) {
   p{
