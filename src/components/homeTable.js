@@ -14,7 +14,7 @@ import { Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import currencyChart from '../pictures/BTCTRY.svg';
-
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 
@@ -136,6 +136,12 @@ export default function PriceTable() {
           ))}
         </TableBody>
       </Table>
+      <Box className='view-link-container'>
+        <Link to='#' className='view-link'>
+          <Typography>view more</Typography>
+          <ArrowForwardIosIcon sx={{p:1}} fontSize='small'/>
+        </Link>
+      </Box>
     </TableContainer>
   );
 }

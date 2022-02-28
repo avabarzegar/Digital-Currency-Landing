@@ -1,5 +1,6 @@
 :root {
   --dark-color: #12161c;
+  --yellow-color:#F1B80A ;
 }
 
 body {
@@ -68,6 +69,12 @@ nav a:hover{
   background-color:#fafafa !important ;
 }
 /* /home-pics */
+/* home-carousel */
+.swiper-container-vertical>.swiper-wrapper {
+  height: 3rem !important;
+  padding: 0 8px;
+}
+/* /home-carousel */
 
 /* table-price */
 .css-1ygcj2i-MuiTableCell-root {
@@ -90,7 +97,46 @@ background-color:#fafafa !important;
 .css-1ex1afd-MuiTableCell-root{
   width: max-content !important;
 }
+.css-quj9j6-MuiTable-root {
+  background: #fff;
+ 
+  border-radius: 5px;
+}
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root{
+  margin-top: 1rem;
+  box-shadow: 0 0 40px rgb(0 0 0 / 8%) !important;
+}
+.view-link-container{
+  background-color: #fff !important;
+  justify-content: center;
+  display: flex;
+  padding: 1.5rem 0;
+}
+.view-link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color:#848e9c;
+}
+.view-link:hover{
+  color: var(--yellow-color)
+}
+.view-link svg,.view-link p{
+font-size: .8rem !important;
+}
 /* /table-price */
+/* buy-crypto */
+.crypto-img-container{
+  width: 80px;margin-bottom: 1rem;
+
+}
+.crypto-grid-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column !important;
+  margin-bottom: 2rem;
+}
+/* buy-crypto */
 
 /* media-queries */
 /* @media screen and (min-width:0px) {
