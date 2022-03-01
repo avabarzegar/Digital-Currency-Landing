@@ -1,6 +1,6 @@
 :root {
   --dark-color: #12161c;
-  --yellow-color:#F1B80A ;
+  --yellow-color: #F1B80A;
 }
 
 body {
@@ -10,8 +10,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0 auto;
   width: 100%;
+  color: #212833;
 }
-a{
+
+a {
   text-decoration: none !important;
 }
 
@@ -19,124 +21,207 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 /* navbar */
-nav{
+nav {
   background-color: var(--dark-color);
   display: flex;
   justify-content: space-between;
-   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: sticky !important;
+  top: 0 !important;
+  width: 100%;
+  z-index: 1000;
 }
+
 .MenuContainer {
   display: flex;
   margin: 0;
   padding: 0;
- 
+
 }
 
 nav a {
   text-decoration: none;
   display: inline-block;
-  
+
 }
-.MenuContainer a{
+
+.MenuContainer a {
   padding: 1rem;
   color: #fff;
   font-weight: 500;
 }
-nav a:hover{
+
+nav a:hover {
   color: #ccc;
 }
-.CustomBtn{
+
+.CustomBtn {
   font-size: 1rem;
-    line-height: 1.5;
-    background: linear-gradient(180deg,#f8d12f,#f0b90b 99.77%);
-    border: none;
-    color: #212833;
-    padding: 0 14px;
-    margin: .5rem auto 1rem;
-    width: 80% !important;
-    border-radius: 4px;
-    
+  line-height: 1.5;
+  background: linear-gradient(180deg, #f8d12f, #f0b90b 99.77%);
+  border: none;
+  color: #212833;
+  padding: 0 14px;
+  margin: .5rem auto 1rem;
+  width: 80% !important;
+  border-radius: 4px;
+
 }
-.CustomBtn:hover{
- 
+
+.CustomBtn:hover {
+
   box-shadow: none;
 }
 
 /* /navbar */
 /* home-pics */
-.css-zgbddb-MuiPaper-root{
-  background-color:#fafafa !important ;
+.css-zgbddb-MuiPaper-root {
+  background-color: #fafafa !important;
 }
+
 /* /home-pics */
 /* home-carousel */
 .swiper-container-vertical>.swiper-wrapper {
   height: 3rem !important;
   padding: 0 8px;
 }
+
 /* /home-carousel */
 
 /* table-price */
 .css-1ygcj2i-MuiTableCell-root {
-    color: #848e9c !important;
-    font-size: .9 !important;
+  color: #848e9c !important;
+  font-size: .9 !important;
 }
+
 .MuiBox-root-2 .MuiTypography-body {
   font-size: 1.2rem !important;
-  
+
 }
-.css-apqrd9-MuiTableBody-root .css-34nofg-MuiTableRow-root:hover{
-background-color:#fafafa !important;
+
+.css-apqrd9-MuiTableBody-root .css-34nofg-MuiTableRow-root:hover {
+  background-color: #fafafa !important;
 }
-.buy-button{
+
+.buy-button {
   background-color: #02c076;
   padding: .5rem 1rem;
   color: #fff;
   border-radius: 5px;
 }
-.css-1ex1afd-MuiTableCell-root{
-  width: max-content !important;
-}
+
 .css-quj9j6-MuiTable-root {
   background: #fff;
- 
+
   border-radius: 5px;
 }
-.css-11xur9t-MuiPaper-root-MuiTableContainer-root{
+
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root {
   margin-top: 1rem;
   box-shadow: 0 0 40px rgb(0 0 0 / 8%) !important;
 }
-.view-link-container{
+
+.view-link-container {
   background-color: #fff !important;
   justify-content: center;
   display: flex;
   padding: 1.5rem 0;
 }
-.view-link{
+
+.view-link {
   display: flex;
   flex-direction: row;
   align-items: center;
-  color:#848e9c;
+  color: #848e9c;
 }
-.view-link:hover{
+
+.view-link:hover {
   color: var(--yellow-color)
 }
-.view-link svg,.view-link p{
-font-size: .8rem !important;
+
+.view-link svg,
+.view-link p {
+  font-size: 1rem !important;
 }
+
+.css-temxuk-MuiTableCell-root,
+.css-nplnic-MuiTableCell-root {
+  color: #848e9c !important;
+}
+
+.rise-gain {
+  color: #02c076;
+  font-size: 1.2rem !important;
+}
+
+.fall-loss {
+  color: #ff0000;
+  font-size: 1.2rem !important;
+}
+
+.last-price {
+  font-size: 1.2rem !important;
+}
+
 /* /table-price */
 /* buy-crypto */
-.crypto-img-container{
-  width: 80px;margin-bottom: 1rem;
+.crypto-img-container {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
 
 }
-.crypto-grid-container{
+
+.crypto-grid-container,
+.inTouch-grid-container {
   display: flex;
   align-items: center;
   flex-direction: column !important;
   margin-bottom: 2rem;
+  text-align: center;
+  color: #212833 !important;
 }
+
+.inTouch-grid-container {
+  margin: 66px 0 !important;
+}
+
+.css-1oknvro-MuiTypography-root {
+  margin: 0 2rem !important;
+}
+
 /* buy-crypto */
+/* FAQ */
+.css-1bqtrqq-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+  background-color: rgb(245, 245, 245);
+  margin-bottom: 8px;
+
+}
+
+.css-ta84vm-MuiAccordionDetails-root .css-ahj2mt-MuiTypography-root {
+  padding: 0px 40px !important;
+  line-height: 24px;
+  white-space: pre-wrap;
+  color: #474d57;
+}
+
+.css-ta84vm-MuiAccordionDetails-root {
+  border-top: none !important;
+}
+
+.css-1gh1khd-MuiButtonBase-root-MuiAccordionSummary-root {
+  background-color: inherit !important;
+  padding: 15px 24px 0 !important;
+}
+
+.expandIconWrapper,
+.collapsIconWrapper {
+  width: 30px !important;
+}
+
+/* /FAQ */
 
 /* media-queries */
 /* @media screen and (min-width:0px) {

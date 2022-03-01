@@ -4,9 +4,9 @@ import HomeBg from '../pictures/home-bg.png';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import { ThemeProvider } from '@material-ui/core/styles';
 import BootstrapButton from '../components/signup';
 import { Link } from '@mui/material';
-import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../components/responsiveTheme';
 import homeImgOne from '../pictures/homeImgOne.png';
 import homeImgTwo from '../pictures/homeImgTwo.png';
@@ -20,11 +20,9 @@ import { Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
-import account from '../pictures/account.png';
-import coin from '../pictures/coin.png';
-import global from '../pictures/global.png';
-import wallet from '../pictures/wallet.png';
-
+import FAQAccordions from '../components/FAQHome';
+import InTouch from '../components/InTouch';
+import BuyCrypto from '../components/BuyCrypto';
 
 
 class Example extends React.Component {
@@ -45,11 +43,6 @@ class Example extends React.Component {
       <Swiper {...params}
       modules={[Autoplay, Pagination, Scrollbar, A11y]}
       autoplay={{ delay: 1000 }}
-      
-     
-      
-     
-      
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
       >
@@ -83,7 +76,7 @@ const Home = () => {
       </Box>
       <Box sx={{bgcolor:'#fafafa',pb:'3rem'}}>
         <Container>
-        <Grid container sx={{py:3 ,px:1}}>
+        <Grid container sx={{py:3,alignItems:'center' ,px:1}}>
           <Grid item xs={8}>
             <ThemeProvider theme={theme}>
             <Typography sx={{color:'black'}}>
@@ -102,22 +95,22 @@ const Home = () => {
         <Grid container>
           <Grid item md={3} xs={12}>
             <Item>
-            <img src={homeImgOne} width='100%' alt='homeimg1'></img>
+            <img src={homeImgOne} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
             </Item>
           </Grid>
           <Grid item md={3} xs={12}>
           <Item>
-           <img src={homeImgTwo} width='100%' alt='homeimg1'></img>
+           <img src={homeImgTwo} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
           </Grid>
           <Grid item md={3} xs={12}>
           <Item>
-           <img src={homeImgThree} width='100%' alt='homeimg1'></img>
+           <img src={homeImgThree} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
           </Grid>
           <Grid item md={3} xs={12}>
           <Item>
-           <img src={homeImgFour} width='100%' alt='homeimg1'></img>
+           <img src={homeImgFour} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
           </Grid>
         </Grid>
@@ -146,49 +139,36 @@ const Home = () => {
             <Box class="swiper-slide">Now you can connect to the crypto world with a sin...<Typography>16/07</Typography></Box>
          </Box>
         </Box> */}
+        {/* price-table */}
         <Box sx={{px:1}}>
           <PriceTable />
         </Box>
         </Container>
       </Box>
-      <Box sx={{bgcolor:'white'}}>
-      <container sx={{px:1}}>
-        <Typography sx={{textAlign:'center',fontSize:'2.2rem',fontWeight:'500',py:5}}>
-        You Can Start Buying Crypto Easily in 4 Steps
-        </Typography>
-        <Grid container sx={{mt:5}}>
-          <Grid item md={3} sm={6} xs={12} className='crypto-grid-container'>
-            <Box className='crypto-img-container'>
-              <img src={global} alt='cryptoPic' width='100%'></img>
-            </Box>
-            <Typography sx={{fontSize:'1.1rem',mb:2}}>Step 1</Typography>
-            <Typography sx={{fontSize:'1rem',mb:7}}>Sign up for binance</Typography>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12} className='crypto-grid-container'>
-            <Box className='crypto-img-container'>
-              <img src={account} alt='cryptoPic' width='100%'></img>
-            </Box>
-            <Typography sx={{fontSize:'1.1rem',mb:2}}>Step 2</Typography>
-            <Typography sx={{fontSize:'1rem',mb:7}}>Verify Your account</Typography>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12} className='crypto-grid-container'>
-            <Box className='crypto-img-container'>
-              <img src={wallet} alt='cryptoPic' width='100%'></img>
-            </Box>
-            <Typography sx={{fontSize:'1.1rem',mb:2}}>Step 3</Typography>
-            <Typography sx={{fontSize:'1rem',mb:7}}>Fund your account</Typography>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12} className='crypto-grid-container'>
-            <Box className='crypto-img-container'>
-              <img src={coin} alt='cryptoPic' width='100%'></img>
-            </Box>
-            <Typography sx={{fontSize:'1.1rem',mb:2}}>Step 4</Typography>
-            <Typography sx={{fontSize:'1rem',mb:7}}>Select coin</Typography>
-          </Grid>
-        </Grid>
-      </container>
+      {/* /price-table */}
+      {/* Buy-crypto */}
+      <BuyCrypto />
+      {/* /Buy-crypto */}
+      {/* FAQ */}
+      <Box sx={{bgcolor:'#fafafa'}}>
+        <Container sx={{px:1,pb:'5rem'}}>
+          <Box sx={{pb:5,pt:'5rem'}}>
+            <Typography sx={{fontSize:'2.5rem',mb:2,fontWeight:'500'}}>
+              FAQ
+            </Typography>
+            <Typography sx={{fontSize:'.9rem'}}>
+              Learn blockchain and cryptocurrency on your schedule and completely free.
+            </Typography>
+          </Box>
+          <FAQAccordions />
+        </Container>
       </Box>
-     
+      {/* /FAQ */}
+
+      {/* get-in-touch */}
+      <InTouch />
+      {/* /get-in-touch */}
+      
       </>
     )
   };

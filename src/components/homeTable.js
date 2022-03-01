@@ -27,7 +27,7 @@ function BTCLogo(){
             <Box sx={{width:'15%',mr:2}}>
                <img src={BTC} alt='BTC' width='100%'></img>
             </Box>
-            <Typography style={{marginRight:5}}>BTC</Typography>
+            <Typography style={{marginRight:10}}>BTC</Typography>
             <Typography style={{color:'#848e9c'}}>Bitcoin</Typography>
         </Box>
         
@@ -39,7 +39,7 @@ function ETHLogo(){
             <Box sx={{width:'15%',mr:2}}>
                <img src={ETH} alt='ETH' width='100%'></img>
             </Box>
-            <Typography style={{marginRight:5}}>ETH</Typography>
+            <Typography style={{marginRight:10}}>ETH</Typography>
             <Typography style={{color:'#848e9c'}}>Ethereum</Typography>
         </Box>
         
@@ -51,7 +51,7 @@ function BNBLogo(){
             <Box sx={{width:'15%',mr:2}}>
                <img src={BNB} alt='BNB' width='100%'></img>
             </Box>
-            <Typography style={{marginRight:5}}>BNB</Typography>
+            <Typography style={{marginRight:10}}>BNB</Typography>
             <Typography style={{color:'#848e9c'}}>BNB</Typography>
         </Box>
         
@@ -63,7 +63,7 @@ function USDTLogo(){
             <Box sx={{width:'15%',mr:2}}>
                <img src={USDT} alt='USDT' width='100%'></img>
             </Box>
-            <Typography style={{marginRight:5}}>USDT</Typography>
+            <Typography style={{marginRight:10}}>USDT</Typography>
             <Typography style={{color:'#848e9c'}}>ThetherUS</Typography>
         </Box>
     )
@@ -71,35 +71,39 @@ function USDTLogo(){
 
 
 const rows = [
-  createData(<BTCLogo />, '₺ 552,117', 
+  createData(<BTCLogo />,
+  <Typography className='last-price' >€ 552,117</Typography>, 
   <Typography className='fall-loss'>1.29%</Typography>,
-  <Box >
-  <img src={currencyChart} alt='chart' height={50}></img>
-  </Box>,
+  <div sx={{width:'100px'}}>
+  <img src={currencyChart} alt='chart1'></img>
+  </div>,
   <Link className='buy-button' to='signIn'>
     buy
   </Link>, ),
-  createData(<ETHLogo />, '₺ 39,084', 
+  createData(<ETHLogo />,
+  <Typography className='last-price' >€ 39,084</Typography>, 
   <Typography className='rise-gain'>1.09%</Typography>,
-  <Box >
-  <img src={currencyChart} alt='chart' height={50}></img>
-  </Box>,
+  <div sx={{width:'100px'}}>
+  <img src={currencyChart} alt='chart2'></img>
+  </div>,
   <Link className='buy-button' to='signIn'>
     buy
   </Link> ),
-  createData(<BNBLogo />, '₺ 5,269',
+  createData(<BNBLogo />,
+  <Typography className='last-price' >€ 5,269</Typography>,
    <Typography className='rise-gain'>0.80%</Typography>,
-   <Box >
-   <img src={currencyChart} alt='chart' height={50}></img>
-   </Box>,
+   <div sx={{width:'100px'}}>
+   <img src={currencyChart} alt='chart3'></img>
+   </div>,
    <Link className='buy-button' to='signIn'>
      buy
    </Link> ),
-  createData(<USDTLogo />, '₺ 13.92',
+  createData(<USDTLogo />,
+  <Typography className='last-price' >€ 13.92</Typography>,
    <Typography className='fall-loss'>1.13%</Typography>,
-   <Box>
-   <img src={currencyChart} alt='chart' height={50}></img>
-   </Box>,
+   <div sx={{width:'100px'}}>
+   <img src={currencyChart} alt='chart4'></img>
+   </div>,
    <Link className='buy-button' to='signIn'>
      buy
    </Link> ),
@@ -112,9 +116,9 @@ export default function PriceTable() {
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell>Last Price</TableCell>
+            <TableCell >Last Price</TableCell>
             <TableCell>24h Change</TableCell>
-            <TableCell>Markets</TableCell>
+            <TableCell >Markets</TableCell>
             <TableCell>buy</TableCell>
           </TableRow>
         </TableHead>
@@ -125,12 +129,12 @@ export default function PriceTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               component={Link} to='signIn'
             >
-              <TableCell scope="row">
+              <TableCell scope="row" sx={{width:{sm:'25%',sx:'50%'}}}>
                 {row.name}
               </TableCell>
-              <TableCell>{row.lastPrice}</TableCell>
+              <TableCell >{row.lastPrice}</TableCell>
               <TableCell>{row.changes}</TableCell>
-              <TableCell>{row.markets}</TableCell>
+              <TableCell >{row.markets}</TableCell>
               <TableCell>{row.buy}</TableCell>
             </TableRow>
           ))}
