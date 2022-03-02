@@ -1,6 +1,8 @@
 :root {
   --dark-color: #12161c;
   --yellow-color: #F1B80A;
+  --txt-hover-color: #ccc;
+  --black-dark-color: #0b0e11;
 }
 
 body {
@@ -20,6 +22,10 @@ a {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button:focus {
+  box-shadow: none !important;
 }
 
 /* navbar */
@@ -54,7 +60,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #ccc;
+  color: var(--txt-hover-color);
 }
 
 .CustomBtn {
@@ -223,27 +229,133 @@ nav a:hover {
 
 /* /FAQ */
 /* footer */
-footer{
-  background-color: #0b0e11;
+footer {
+  background-color: var(--black-dark-color);
   color: #848e9c;
-  padding: 5rem;
-  
+  padding: 6rem 5rem;
+  position: relative;
+  bottom: 0 !important;
+  left: 0;
 }
-footer p{
+
+footer a {
+  color: #848e9c;
+}
+
+footer a:hover {
+  color: var(--txt-hover-color);
+}
+
+footer p {
   font-size: .9rem !important;
 }
-.css-1p823my-MuiListItem-root{
+
+.css-1p823my-MuiListItem-root {
   padding: 2px !important;
-  
+
 }
-.css-10hburv-MuiTypography-root{
+
+.css-10hburv-MuiTypography-root {
   font-size: .9rem !important;
 }
-.first-footer-item span{
+
+.first-footer-item span {
   color: white;
   font-size: 1.2rem !important;
   font-weight: 600;
 }
+
+.lan-menu-item {
+  color: #848e9c !important;
+
+}
+
+.lan-menu-item:hover {
+  background-color: #373737 !important;
+}
+
+.lan-menu-item:hover {
+  color: var(--yellow-color) !important;
+}
+
+.footer-last-list li {
+  margin-bottom: .8rem;
+}
+
+.footer-last-list li:last-of-type {
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.footer-lan-btn {
+  border-color: #848e9c !important;
+  padding: .4rem 2rem .4rem 1rem !important;
+  border: 1px solid #48515d !important;
+  position: relative;
+}
+
+.footer-lan-btn:hover {
+  border-color: #848e9c !important;
+}
+
+.footer-lan-btn:after {
+  position: absolute;
+  content: "";
+  top: 16px;
+  right: 15px;
+  border: 5px solid transparent;
+  border-top-color: #fff;
+  transition: transform .3s;
+  transform-origin: 5px 2.5px;
+}
+
+.footer-last-list li:last-of-type:hover .footer-lan-btn:after {
+  transform: rotate(180deg);
+  transform: .3s;
+
+}
+
+.footer-copyRight {
+  border-top: 1px solid #212833;
+  color: #848e9c;
+  padding: 24px;
+  text-align: center;
+  background-color: var(--black-dark-color);
+
+}
+
+.footer-copyRight p {
+  font-size: .8rem !important;
+}
+
+.home-up-footer {
+  background-color: var(--black-dark-color);
+  padding: 4rem 5rem 1rem;
+  text-align: center;
+}
+
+.home-footer-btn {
+  display: block;
+  border-radius: 4px;
+  font-weight: 700;
+  min-width: 150px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.home-footer-btn:first-of-type {
+  background-image: linear-gradient(180deg, #f8d12f, #f0b90b 99.77%);
+  color: #212833;
+}
+
+.home-footer-btn:last-of-type {
+  border: 1px solid #f8d12f;
+  color: #f0b90b;
+  margin-left: 24px;
+}
+
 /* /footer */
 
 /* media-queries */

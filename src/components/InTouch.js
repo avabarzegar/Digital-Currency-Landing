@@ -32,7 +32,6 @@ export default function InTouch(){
             <Typography sx={{color:'#48515d' ,fontSize:'.9rem',mb:7}}>Got a question? We've probably got the answer for you here.</Typography>
           </Grid>
         </Grid>
-
         </Container>
       </Box>
       )

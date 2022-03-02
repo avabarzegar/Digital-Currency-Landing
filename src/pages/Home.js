@@ -5,9 +5,9 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
-import BootstrapButton from '../components/signup';
+import BootstrapButton from '../components/SignUp';
 import { Link } from '@mui/material';
-import theme from '../components/responsiveTheme';
+import theme from '../components/ResponsiveTheme';
 import homeImgOne from '../pictures/homeImgOne.png';
 import homeImgTwo from '../pictures/homeImgTwo.png';
 import homeImgThree from '../pictures/homeImgThree.png';
@@ -15,14 +15,15 @@ import homeImgFour from '../pictures/homeImgFour.jpg';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import PriceTable from '../components/homeTable';
+import PriceTable from '../components/HomeTable';
 import { Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper,SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import FAQAccordions from '../components/FAQHome';
 import InTouch from '../components/InTouch';
 import BuyCrypto from '../components/BuyCrypto';
+import HomeUpFooter from '../components/HomeUpFooter';
 
 
 class Example extends React.Component {
@@ -31,18 +32,24 @@ class Example extends React.Component {
     const params = {
       container: ".container",
       slidesPerView: 1,
-      centeredSlides:true,
-      paginationClickable: true,
-      direction: "vertical",
-      autoplay:true,
-      autoplay:2000,  
-      loop: true
+      centeredSlides:true, 
+      loop: true,
+      direction:'vertical',
+      autoplay: {
+        delay: 500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
     };
     
     return (
       <Swiper {...params}
-      modules={[Autoplay, Pagination, Scrollbar, A11y]}
-      autoplay={{ delay: 1000 }}
+      modules={[Autoplay, Pagination, A11y]}
+      autoplay={{ delay: 500 }}
+      pagination={{ clickable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
       >
@@ -168,7 +175,11 @@ const Home = () => {
       {/* get-in-touch */}
       <InTouch />
       {/* /get-in-touch */}
-      
+      {/* footer */}
+      <HomeUpFooter />
+  
+      {/* footer */}
+
       </>
     )
   };

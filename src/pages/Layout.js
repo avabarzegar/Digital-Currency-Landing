@@ -2,20 +2,19 @@ import React  from 'react';
 import { Routes, Route, Link } from "react-router-dom"
 import logo from '../pictures/logo.png';
 import Typography from '@mui/material/Typography';
-import BootstrapButton from "../components/signup";
+import BootstrapButton from "../components/SignUp";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Container from '@material-ui/core/Container';
 import Home from './Home';
 import Exchange from './Exchange';
 import Mobile from './Mobile';
 import Withdraw from './Withdraw';
 import Deposit from './Deposit';
 import Market from './Market';
+import SignIn from './SignIn';
 import NotFound from './NotFound';
 import Register from './Register';
-import CustomizedDialogs from '../components/nav-lan-currency';
-import SignIn from '../components/signup';
+import CustomizedDialogs from '../components/NavLanCurrency';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
@@ -31,13 +30,7 @@ import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import DownloadIcon from '@mui/icons-material/Download';
 import LanguageIcon from '@mui/icons-material/Language';
-import footerApple from '../pictures/footer-apple.png';
-import footerGooglePlay from '../pictures/footer-googleplay.png';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import Tooltip from '@mui/material/Tooltip';
+import Footer from '../components/Footer';
 
 
 const App = () => {
@@ -234,117 +227,7 @@ const App = () => {
           <Route path="*" element={<NotFound />}></Route>
           </Routes>
       </div>
-      <footer>
-            <Container>
-                <Grid container sx={{justifyContent:'space-between'}}>
-                    <Grid container xs={12} md={5}>  
-                          <Grid xs={12}>
-                              <Typography>
-                              Binance TR Office address
-                              <br/>
-                              BN TEKNOLOJİ A.Ş.
-                              <br/>
-                              Esentepe Mah. Büyükdere Cad. Ferko Apt. No:175/7
-                              <br/>
-                              Şişli İstanbul
-                              </Typography>
-                          </Grid>
-                          <Grid xs={12}>
-                            <Typography>
-                            <br/>
-                            Email
-                            <br/>
-                            destek@trbinance.com
-                            <br/>
-                            <br/>
-                            </Typography>
-                          </Grid>
-                          <Grid xs={12} sx={{flexDirection:'row'}}>
-                              <Link to='SignIn' sx={{mr:2}}>
-                              <img src={footerApple} width='40%' style={{paddingRight:'.3rem'}} alt='app store'></img>
-                              </Link>
-                              <Link to='SignIn'>
-                              <img src={footerGooglePlay} width='40%' style={{paddingLeft:'.3rem'}} alt='google play'></img>
-                              </Link>
-                          </Grid>
-                    </Grid>
-                    <Grid container xs={12} md={6}>
-                      <Grid xs={12} sm={4}>
-                        <List>
-                          <ListItem>
-                            <ListItemText className='first-footer-item' primary='About' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Fees' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Terms' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Privacy' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Risk' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Confidentiality' />
-                          </ListItem>
-                        </List>
-                      </Grid>
-                      <Grid xs={12} sm={4}>
-                        <List>
-                          <ListItem>
-                            <ListItemText className='first-footer-item' primary='Support' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='FAQ' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Announcements' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Binance TR Guidelines' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='Support Center' />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemText primary='API Documentation' />
-                          </ListItem>
-                        </List>
-                      </Grid>
-                      <Grid xs={12} sm={4}>
-                        <List>
-                        <ListItem>
-                            <ListItemText className='first-footer-item' primary='Community' />
-                          </ListItem>
-                          <ListItem sx={{display:'flex',flexDirection:'row',pl:0,justifyContent:'start'}}>
-                            <ListItemIcon component={Link}>
-                              <TelegramIcon sx={{color:'#848e9c'}} />
-                            </ListItemIcon>
-                            <ListItemIcon component={Link}>
-                              <FacebookRoundedIcon sx={{color:'#848e9c'}} />
-                            </ListItemIcon>
-                            <ListItemIcon component={Link}>
-                              <TwitterIcon sx={{color:'#848e9c'}} />
-                            </ListItemIcon>
-                            <ListItemIcon component={Link}>
-                              <InstagramIcon sx={{color:'#848e9c'}} />
-                            </ListItemIcon>
-                          </ListItem>
-                          <ListItem>
-                          <Tooltip title="Add" placement="top">
-                            <Button>top</Button>
-                          </Tooltip>
-                          </ListItem>
-
-                        </List>
-                      </Grid>
-                    </Grid>
-                    </Grid>
-                
-            </Container>
-        </footer>
+        <Footer />
     </div>
     )
   };
