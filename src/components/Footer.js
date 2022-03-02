@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import footerApple from '../pictures/footer-apple.png';
-import footerGooglePlay from '../pictures/footer-google-play.png'
+import footerGooglePlay from '../pictures/footer-googleplay.png'
 
 
 
@@ -16,7 +16,17 @@ export default function Footer(){
                 <Grid container>
                     <Grid xs={5} md={12}>
                         <Grid container>
-                          <Grid sx={12}></Grid>
+                          <Grid sx={12}>
+                              <Typography sx={{color:''}}>
+                              Binance TR Office address
+                              <br/>
+                              BN TEKNOLOJİ A.Ş.
+                              <br/>
+                              Esentepe Mah. Büyükdere Cad. Ferko Apt. No:175/7
+                              <br/>
+                              Şişli İstanbul
+                              </Typography>
+                          </Grid>
                           <Grid sx={12}></Grid>
                           <Grid sx={12} sx={{flexDirection:'row'}}>
                               <Link>

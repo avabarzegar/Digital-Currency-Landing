@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import BootstrapButton from "../components/signup";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Container from '@material-ui/core/Container';
 import Home from './Home';
 import Exchange from './Exchange';
 import Mobile from './Mobile';
@@ -30,7 +31,13 @@ import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import DownloadIcon from '@mui/icons-material/Download';
 import LanguageIcon from '@mui/icons-material/Language';
-
+import footerApple from '../pictures/footer-apple.png';
+import footerGooglePlay from '../pictures/footer-googleplay.png';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import Tooltip from '@mui/material/Tooltip';
 
 
 const App = () => {
@@ -60,7 +67,6 @@ const App = () => {
           <ListItem button variant="text" component={Link} to="SignIn" style={{color : 'white'}}>
             <ListItemText sx={{textAlign:'center'}} primary='Sign in' />
           </ListItem>
-      
           <ListItem to='Register' component={Link} className='CustomBtn' variant="contained"  size='small'>
             <ListItemText sx={{color: 'black',textAlign:'center'}} primary='Register' />
           </ListItem>
@@ -70,43 +76,31 @@ const App = () => {
               <BarChartIcon />    
             </ListItemIcon>
             <ListItemText primary='Markets' />
-          </ListItem>
-         
-          
+          </ListItem>                  
           <ListItem button component={Link} to="Exchange" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <CurrencyExchangeIcon />
             </ListItemIcon>
             <ListItemText primary='Exchange' />
           </ListItem>
-         
           <ListItem button component={Link} to="Deposit" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
-              <AccountBalanceWalletOutlinedIcon />
-              
+              <AccountBalanceWalletOutlinedIcon />     
             </ListItemIcon>
-            <ListItemText primary='Deposit' />
-          
-          </ListItem>
-          
+            <ListItemText primary='Deposit' /> 
+          </ListItem>  
           <ListItem button component={Link} to="Withdraw" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
-              <AccountBalanceWalletOutlinedIcon />
-              
+              <AccountBalanceWalletOutlinedIcon />       
             </ListItemIcon>
-            <ListItemText primary='Withdraw' />
-          
-          </ListItem>
-          
+            <ListItemText primary='Withdraw' />    
+          </ListItem>    
           <ListItem button component={Link} to="Mobile" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
-              <TipsAndUpdatesIcon />
-              
+              <TipsAndUpdatesIcon />     
             </ListItemIcon>
             <ListItemText primary='Mobile App' />
-          
-          </ListItem>
-       
+          </ListItem>  
       </List>
       <Divider style={{backgroundColor: '#ffffff1a'}} />
       <List>
@@ -240,90 +234,117 @@ const App = () => {
           <Route path="*" element={<NotFound />}></Route>
           </Routes>
       </div>
-       
-      {/* <AppBar position="static" className='navbar'>
-        <Container maxWidth="xl">
-          <Toolbar sx={{display: 'flex' , justifyContent:{xs:'space-between' , md: 'flex-start'}}} disableGutters>
-           <Link underline='none' to="/" activeClassName="active">
-           <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ mr: 2, display: "flex" }}
-            >         
-        <img
-          src={logo} 
-          alt="logo"     
-          style={{
-            width:150, 
-            borderRadius: 40 / 2,
-            marginLeft: 15,
-          }}
-        />
-            </Typography>
-            
-        </Link>
-        <Box sx={{display: 'flex', justifyContent:{ md: 'space-between' , xs: 'end'} , flexDirection:{md: 'row-reverse'}}} >
-            <Box sx={{display:{xs: 'flex' , md: 'none'} , alignItems: 'center'}}>
-              <BootstrapButton variant="contained"  size='small'>
-               Register
-              </BootstrapButton>
-            </Box>
-            <Box sx={{ display: { xs: 'flex', md: 'none' },justifyContent:'end'}}>           
-              <TemporaryDrawer />
-            </Box>            
-            </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent:'start' }}>
-             <List style={{display:'flex' , flexDirection:'row' }}>
-              <listItem>
-                <Link button underline='none' to="Market" activeClassName="active">
-                  <ListItemButton>
-                   <ListItemText sx={{color: 'white'}} primary="Market" />
-                  </ListItemButton>              
-                  </Link>
-              </listItem>
-              <listItem>
-                <Link button underline='none' to="Exchange" activeClassName="active">
-                  <ListItemButton>
-                    <ListItemText sx={{color: 'white'}} primary="Exchange" />
-                  </ListItemButton>
-                  </Link>
-              </listItem>
-              <listItem>
-                <Link button underline='none' to="Deposit" activeClassName="active">
-                  <ListItemButton>
-                    <ListItemText sx={{color: 'white'}} primary="Deposit" />
-                  </ListItemButton>
-                  </Link>
-              </listItem>
-              <listItem>
-                <Link button underline='none' to="Withdraw" activeClassName="active">
-                  <ListItemButton> 
-                    <ListItemText sx={{color: 'white'}} primary="Withdraw" />
-                  </ListItemButton>
-                 </Link>
-              </listItem>
-              <listItem>
-                <Link button underline='none' to="Mobile" activeClassName="active">
-                  <ListItemButton>
-                    <ListItemText sx={{color: 'white'}} primary="Mobile App" />
-                  </ListItemButton>
-                  </Link>
-              </listItem>
-             </List>
-            </Box>
-            <Box sx={{display:{xs: 'none' , md: 'flex'} , alignItems: 'center' , flexDirection: 'row'}}>
-             <Link href='#' button variant="text" sx={{mx: 2, color: 'white',textDecoration: 'none'}}>Sign in</Link>      
-             <BootstrapButton variant="contained"  size='small'>
-              <Link sx={{color: 'black', textDecoration: 'none'}} href='#'>
-               Register
-              </Link>    
-             </BootstrapButton>
-             <CustomizedDialogs />
-            </Box>
-          </Toolbar>
-        </Container> 
-    </AppBar> */}
+      <footer>
+            <Container>
+                <Grid container sx={{justifyContent:'space-between'}}>
+                    <Grid container xs={12} md={5}>  
+                          <Grid xs={12}>
+                              <Typography>
+                              Binance TR Office address
+                              <br/>
+                              BN TEKNOLOJİ A.Ş.
+                              <br/>
+                              Esentepe Mah. Büyükdere Cad. Ferko Apt. No:175/7
+                              <br/>
+                              Şişli İstanbul
+                              </Typography>
+                          </Grid>
+                          <Grid xs={12}>
+                            <Typography>
+                            <br/>
+                            Email
+                            <br/>
+                            destek@trbinance.com
+                            <br/>
+                            <br/>
+                            </Typography>
+                          </Grid>
+                          <Grid xs={12} sx={{flexDirection:'row'}}>
+                              <Link to='SignIn' sx={{mr:2}}>
+                              <img src={footerApple} width='40%' style={{paddingRight:'.3rem'}} alt='app store'></img>
+                              </Link>
+                              <Link to='SignIn'>
+                              <img src={footerGooglePlay} width='40%' style={{paddingLeft:'.3rem'}} alt='google play'></img>
+                              </Link>
+                          </Grid>
+                    </Grid>
+                    <Grid container xs={12} md={6}>
+                      <Grid xs={12} sm={4}>
+                        <List>
+                          <ListItem>
+                            <ListItemText className='first-footer-item' primary='About' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Fees' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Terms' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Privacy' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Risk' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Confidentiality' />
+                          </ListItem>
+                        </List>
+                      </Grid>
+                      <Grid xs={12} sm={4}>
+                        <List>
+                          <ListItem>
+                            <ListItemText className='first-footer-item' primary='Support' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='FAQ' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Announcements' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Binance TR Guidelines' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='Support Center' />
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText primary='API Documentation' />
+                          </ListItem>
+                        </List>
+                      </Grid>
+                      <Grid xs={12} sm={4}>
+                        <List>
+                        <ListItem>
+                            <ListItemText className='first-footer-item' primary='Community' />
+                          </ListItem>
+                          <ListItem sx={{display:'flex',flexDirection:'row',pl:0,justifyContent:'start'}}>
+                            <ListItemIcon component={Link}>
+                              <TelegramIcon sx={{color:'#848e9c'}} />
+                            </ListItemIcon>
+                            <ListItemIcon component={Link}>
+                              <FacebookRoundedIcon sx={{color:'#848e9c'}} />
+                            </ListItemIcon>
+                            <ListItemIcon component={Link}>
+                              <TwitterIcon sx={{color:'#848e9c'}} />
+                            </ListItemIcon>
+                            <ListItemIcon component={Link}>
+                              <InstagramIcon sx={{color:'#848e9c'}} />
+                            </ListItemIcon>
+                          </ListItem>
+                          <ListItem>
+                          <Tooltip title="Add" placement="top">
+                            <Button>top</Button>
+                          </Tooltip>
+                          </ListItem>
+
+                        </List>
+                      </Grid>
+                    </Grid>
+                    </Grid>
+                
+            </Container>
+        </footer>
     </div>
     )
   };

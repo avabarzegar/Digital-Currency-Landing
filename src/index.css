@@ -222,6 +222,29 @@ nav a:hover {
 }
 
 /* /FAQ */
+/* footer */
+footer{
+  background-color: #0b0e11;
+  color: #848e9c;
+  padding: 5rem;
+  
+}
+footer p{
+  font-size: .9rem !important;
+}
+.css-1p823my-MuiListItem-root{
+  padding: 2px !important;
+  
+}
+.css-10hburv-MuiTypography-root{
+  font-size: .9rem !important;
+}
+.first-footer-item span{
+  color: white;
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+/* /footer */
 
 /* media-queries */
 /* @media screen and (min-width:0px) {
