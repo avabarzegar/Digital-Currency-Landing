@@ -7,13 +7,13 @@ import Button from '@mui/material/Button';
 const BootstrapButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
-    fontSize: 16,
+    fontSize: '.9rem',
     lineHeight: 1.5,
     background: 'linear-gradient(180deg,#f8d12f,#f0b90b 99.77%)',
     border: 'none',
-    fontWeight:'600 !important',
+    fontWeight:600,
     color: '#212833',
-    padding: '6px 14px',
+    padding: '4px 10px',
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',

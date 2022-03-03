@@ -80,7 +80,7 @@ export default function FAQAccordions() {
 
   return (
       <Grid container>
-          <Grid item md={6}>
+          <Grid item xs={12} md={6}>
           <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography>How can I deposit TRY?</Typography>
@@ -150,7 +150,7 @@ export default function FAQAccordions() {
         </AccordionDetails>
       </Accordion>
           </Grid>
-          <Grid item md={6}>
+          <Grid item xs={12} md={6}>
           <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
         <AccordionSummary aria-controls="panel7d-content" id="panel7d-header">
           <Typography>What is Binance Transfer and how to use it?</Typography>

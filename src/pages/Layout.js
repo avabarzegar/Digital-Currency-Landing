@@ -35,9 +35,6 @@ import Footer from '../components/Footer';
 
 const App = () => {
   const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
     right: false,
   });
 
@@ -129,10 +126,10 @@ const App = () => {
              src={logo} 
              alt="logo"     
              style={{
-             width:150, 
              borderRadius: 40 / 2,
              marginLeft: 15,
              }}
+             className='logoimg'
              />
             </Typography>
             </Link>
@@ -175,14 +172,14 @@ const App = () => {
           </Grid>
          
         </Grid>
-             <Grid item xs={4} sx={{justifyContent: 'end', display:{xs: 'flex' , md: 'none'} , alignItems: 'center' , flexDirection: 'row'}}>
+             <Grid item xs={4} sx={{justifyContent: 'end', display:{xs: 'flex', md: 'none'} , alignItems: 'center' , flexDirection: 'row'}}>
           <Link to="Register"> 
-              <BootstrapButton variant="contained"  size='small'>
+              <BootstrapButton sx={{display:{xs: 'none',sm:'flex'}}} variant="contained"  size='small'>
                Register  
               </BootstrapButton>
              </Link>
             <div sx={{ display: { xs: 'flex', md: 'none' },justifyContent:'end'}}>           
-              {/* <TemporaryDrawer /> */}
+             
               <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>

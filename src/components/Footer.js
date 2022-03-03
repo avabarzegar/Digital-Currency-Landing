@@ -82,10 +82,10 @@ export default function Footer(){
                           </Grid>
                           <Grid xs={12} sx={{flexDirection:'row'}}>
                               <Link to='SignIn' sx={{mr:2}}>
-                              <img src={footerApple} width='180px' style={{marginRight:'.5rem',mb:1}} alt='app store'></img>
+                              <img src={footerApple} className='footer-googleplay' style={{marginRight:'.5rem',mb:1}} alt='app store'></img>
                               </Link>
                               <Link to='SignIn'>
-                              <img src={footerGooglePlay} width='180px' style={{mb:1}} alt='google play'></img>
+                              <img src={footerGooglePlay} className='footer-googleplay' style={{mb:1}} alt='google play'></img>
                               </Link>
                           </Grid>
                     </Grid>
@@ -141,16 +141,16 @@ export default function Footer(){
                           </ListItem>
                           <ListItem sx={{display:'flex',flexDirection:'row',pl:0,justifyContent:'start'}}>
                             <ListItemIcon component={Link}>
-                              <TelegramIcon sx={{color:'#848e9c'}} />
+                              <TelegramIcon className='social-icons' />
                             </ListItemIcon>
                             <ListItemIcon component={Link}>
-                              <FacebookRoundedIcon sx={{color:'#848e9c'}} />
+                              <FacebookRoundedIcon className='social-icons' />
                             </ListItemIcon>
                             <ListItemIcon component={Link}>
-                              <TwitterIcon sx={{color:'#848e9c'}} />
+                              <TwitterIcon className='social-icons' />
                             </ListItemIcon>
                             <ListItemIcon component={Link}>
-                              <InstagramIcon sx={{color:'#848e9c'}} />
+                              <InstagramIcon className='social-icons' />
                             </ListItemIcon>
                           </ListItem>
                           <ListItem
