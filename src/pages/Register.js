@@ -1,11 +1,53 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, useField } from 'formik';
 import * as Yup from 'yup';
 import Box from '@mui/material/Box';
-
+import Input from '@mui/material/Input';
+import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/VisibilityOutlined';
+import VisibilityOff from '@mui/icons-material/VisibilityOffOutlined';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
 
 const Register = () => {
+
+
+const [values, setValues] = React.useState({
+    password: '',
+    conform: '',
+    showPassword: false,
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
   
+  const handleClickShowConfirm = () => {
+    setValues({
+      ...values,
+      showConfirm: !values.showConfirm,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
+  
+  const handleMouseDownConfirm = (event) => {
+    event.preventDefault();
+  };
+
+
 const RegisterSchema=Yup.object().shape({
   email: Yup.string()
     .email('Invalid email address')
@@ -36,8 +78,8 @@ const RegisterSchema=Yup.object().shape({
     const [field, meta] = useField(props);
     return (
       <>
-        <label htmlFor={props.id || props.name}>{label}</label>
-        <Field className="text-input" {...field} {...props} />
+        <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>
+        <Input className="text-input" {...field} {...props} />
         {meta.touched && meta.error ? (
           <div className="error">{meta.error}</div>
         ) : null}
@@ -68,7 +110,7 @@ const RegisterSchema=Yup.object().shape({
           console.log(values);
         }}
       >
-        {({ errors, touched }) => (
+     
         <Form>
   
           <MyTextInput
@@ -77,49 +119,56 @@ const RegisterSchema=Yup.object().shape({
             type="email"
             
           />
-          {errors.email && touched.email ? (
- -            <div>{errors.email}</div>
- -          ) : null}
- +         <ErrorMessage name="email" />
-          
-            
           
           <MyTextInput
             type='tel'
             name='number'
             label='phone number'
           />
-          {errors.number && touched.number ? (
- -            <div>{errors.number}</div>
- -          ) : null}
- +         <ErrorMessage name="number" />
-
          
-          <MyTextInput
+          <MyTextInput 
+            
             label="password"
             name="password"
             type={values.showPassword ? 'text' : 'password'}
             
+           
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {values.showPassword ? <Visibility sx={{fontSize:'.95rem',color:'#9c9c9c'}} /> : <VisibilityOff sx={{fontSize:'.95rem',color:'#9c9c9c'}} />}
+                </IconButton>
+              </InputAdornment>
+            }
           />
-          {errors.password && touched.password ? (
- -            <div>{errors.password}</div>
- -          ) : null}
- +         <ErrorMessage name="password" />
-
-
-          <MyTextInput
+   
+          <MyTextInput 
+            
             label="confirm password"
             name="confirm"
-            type={values.showPassword ? 'text' : 'password'}
+            type={values.showConfirm ? 'text' : 'password'}
             
+           
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowConfirm}
+                  onMouseDown={handleMouseDownConfirm}
+                >
+                  {values.showConfirm ? <Visibility sx={{fontSize:'.95rem',color:'#9c9c9c'}} /> : <VisibilityOff sx={{fontSize:'.95rem',color:'#9c9c9c'}} />}
+                </IconButton>
+              </InputAdornment>
+            }
           />
-          {errors.confirm && touched.confirm ? (
- -            <div>{errors.confirm}</div>
- -          ) : null}
- +         <ErrorMessage name="confirm" />
+  
           <button type="submit">Submit</button>
         </Form>
-        )}
+     
       </Formik>
     </>
   );

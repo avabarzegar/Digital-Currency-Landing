@@ -9,11 +9,14 @@ import { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Visibility from '@mui/icons-material/VisibilityOutlined';
+import VisibilityOff from '@mui/icons-material/VisibilityOffOutlined';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import MiniLogo from '../pictures/minilogo.svg';
+
+
+const SignIn = () => {
 
 const validationSchema = yup.object({
   email: yup.string('Enter your email')
@@ -26,9 +29,6 @@ const validationSchema = yup.object({
     .required('Must be at least 8 characters and contain at least one uppercase, one lowercase letter and one number.')
   
 });
-
-const SignIn = () => {
-
   const [values, setValues] = React.useState({
     password: '',
     showPassword: false,
@@ -64,7 +64,7 @@ const SignIn = () => {
       <Box sx={{pt:5,mx:'auto',width: '384px',display:'flex',alignItems:'center',flexDirection:'column'}}>
         <Box sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
           <Typography sx={{mb:'3rem',fontSize:'1.5rem'}}>Sign in</Typography>
-          <Typography sx={{color:'#848e9c',fontSize:'.85rem'}}>
+          <Typography sx={{color:'#848e9c',fontSize:'.88rem'}}>
             Please check that you are visiting the correct URL:
           </Typography>
           <Box sx={{width:'60%',m:' 16px auto 40px',p: '8px 25px 8px 10px',border:'1px solid #f5f5f5',borderRadius: '23px',display:'flex',flexDirection:'row',alignItems:'center'}}>
@@ -73,12 +73,12 @@ const SignIn = () => {
           </Box>
         </Box>
       <Box className='form-container'>
-        <Typography sx={{color:'#848e9c',fontSize:'.85rem',mb:'1rem'}}>Log in with Binance.com account:</Typography>
-        <a style={{textAlign:'center',width:'80%',margin:'8px auto 30px',padding: '10px 14px',border:'1.5px solid #f0b90b',borderRadius: '4px',display:'flex',flexDirection:'row',justifyContent:'center'}}>
+        <Typography sx={{color:'#848e9c',fontSize:'.88rem',mb:'1rem'}}>Log in with Binance.com account:</Typography>
+        <a style={{textAlign:'center',width:'90%',margin:'8px auto 30px',padding: '10px 14px',border:'1.5px solid #f0b90b',borderRadius: '4px',display:'flex',flexDirection:'row',justifyContent:'center'}}>
             <img src={MiniLogo} style={{marginRight:'5px'}}  alt='MiniLogo'></img>
             <Typography>Log in with Binance.com</Typography>
         </a>
-        <Typography sx={{color:'#848e9c',fontSize:'.85rem',mb:'3rem'}}>Log in with Binance TR account:</Typography>
+        <Typography sx={{color:'#848e9c',fontSize:'.88rem',mb:'3rem'}}>Log in with Binance TR account:</Typography>
       <form onSubmit={formik.handleSubmit}>
         <TextField
         style={{marginBottom:'3rem'}}
@@ -107,7 +107,7 @@ const SignIn = () => {
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
               >
-                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                {values.showPassword ? <Visibility sx={{fontSize:'.95rem',color:'#9c9c9c'}} /> : <VisibilityOff sx={{fontSize:'.95rem',color:'#9c9c9c'}} />}
               </IconButton>
             </InputAdornment>
           }

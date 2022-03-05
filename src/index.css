@@ -450,9 +450,36 @@ footer p {
   background: linear-gradient(180deg, #f8d12f, #f0b90b 99.77%) !important;
   color: #212833 !important;
   text-transform: none !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   padding: 11px 14px !important;
+  box-shadow: none !important;
 }
+.MuiInput-underline:hover:not(.Mui-disabled):before,.MuiInput-underline:before {
+  border-bottom: 1px solid #e6e6e6 !important;
+}
+.MuiFormLabel-root{
+  font-size: .9rem !important;
+  color: #9c9c9c !important ;
+  font-weight: 500 !important;
+}
+.MuiFormLabel-root.Mui-focused{
+  color: var(--yellow-color) !important;
+  font-size: 1rem !important;
+}
+.MuiInputLabel-shrink{
+  transform: scale(.9) !important;
+}
+.MuiInput-underline:after{
+  border-bottom: 1px solid var(--yellow-color) !important;
+}
+/* /sign-in */
+/* register */
+.error{
+  color: red;
+  font-size: .8rem;
+}
+/* /register */
+
 /* media-queries */
 @media screen and (max-width:600px) {
 
