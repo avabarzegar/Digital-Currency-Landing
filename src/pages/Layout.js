@@ -2,7 +2,7 @@ import React  from 'react';
 import { Routes, Route, Link } from "react-router-dom"
 import logo from '../pictures/logo.png';
 import Typography from '@mui/material/Typography';
-import BootstrapButton from "../components/SignUp";
+import BootstrapButton from '../components/signup';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Home from './Home';

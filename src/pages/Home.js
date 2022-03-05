@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
-import BootstrapButton from '../components/SignUp';
+import BootstrapButton from '../components/signup';
 import { Link } from '@mui/material';
 import theme from '../components/ResponsiveTheme';
 import homeImgOne from '../pictures/homeImgOne.png';
