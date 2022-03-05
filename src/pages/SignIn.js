@@ -1,11 +1,9 @@
 import React from 'react';
-import { Formik, Form, Field, useField } from 'formik';
+import { Formik, useField } from 'formik';
 import * as yup from 'yup';
 import Button from '@mui/material/Button';
-import TextField from '@material-ui/core/TextField';
 import { Box, Typography } from '@mui/material';
 import lock from '../pictures/lock.svg';
-import { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -14,6 +12,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOffOutlined';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import MiniLogo from '../pictures/minilogo.svg';
+import { Link } from 'react-router-dom';
 
 
 const SignIn = () => {
@@ -131,6 +130,10 @@ const SignIn = () => {
         <Button className='sign-btn' variant="contained" fullWidth type="submit">
           Sign in
         </Button>
+        <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-between',mt:'2rem'}}>
+          <Link to='/ForgetPassword'><Typography sx={{color:'#F1B80A',fontWeight:600,fontSize:'.85rem'}}>Forgot password?</Typography></Link>
+          <Link to='/Register'><Typography sx={{color:'#F1B80A',fontWeight:600,fontSize:'.85rem'}}>Register</Typography></Link>
+        </Box>
       </form>
       </Formik>
       </Box>

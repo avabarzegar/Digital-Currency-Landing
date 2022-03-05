@@ -10,7 +10,7 @@ import BTC from '../pictures/BTC.png';
 import ETH from '../pictures/ETH.png';
 import BNB from '../pictures/BNB.png';
 import USDT from '../pictures/USDT.png';
-import { Box } from '@material-ui/core';
+import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import currencyChart from '../pictures/BTCTRY.svg';
