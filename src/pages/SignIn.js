@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { Formik, Form, Field, useField } from 'formik';
 import * as yup from 'yup';
 import Button from '@mui/material/Button';
 import TextField from '@material-ui/core/TextField';
@@ -18,32 +18,12 @@ import MiniLogo from '../pictures/minilogo.svg';
 
 const SignIn = () => {
 
-const validationSchema = yup.object({
-  email: yup.string('Enter your email')
-    .email('Enter a valid email')
-    .required('Please enter a valid email'),
-  password: yup.string('Enter your password')
-    .min(8, 'Must be 8 characters at least')
-    .max(16, 'Must be 16 characters or less')
-    .matches('^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]$')
-    .required('Must be at least 8 characters and contain at least one uppercase, one lowercase letter and one number.')
-  
-});
   const [values, setValues] = React.useState({
     password: '',
     showPassword: false,
   });
   
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-    validationSchema: {validationSchema},
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
+ 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -58,6 +38,33 @@ const validationSchema = yup.object({
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  const validationSchema = yup.object({
+    email: yup.string('Enter your email')
+      .email('Enter a valid email')
+      .required('Please enter a valid email'),
+    password: yup.string('Enter your password')
+      .min(8, 'Must be 8 characters at least')
+      .max(16, 'Must be 16 characters or less')
+      .matches('^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]$')
+      .required('Must be at least 8 characters and contain at least one uppercase, one lowercase letter and one number.')
+    
+  });
+
+  
+  const MyTextInput = ({ label, ...props }) => {
+    const [field, meta] = useField(props);
+    return (
+      <>
+        <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>
+        <Input className="text-input" {...field} {...props} />
+        {meta.touched && meta.error ? (
+          <div className="error">{meta.error}</div>
+        ) : null}
+      </>
+    );
+  };
+ 
 
   return (
     <Box sx={{bgcolor:'#fafafa'}}>
@@ -79,27 +86,35 @@ const validationSchema = yup.object({
             <Typography>Log in with Binance.com</Typography>
         </a>
         <Typography sx={{color:'#848e9c',fontSize:'.88rem',mb:'3rem'}}>Log in with Binance TR account:</Typography>
-      <form onSubmit={formik.handleSubmit}>
-        <TextField
-        style={{marginBottom:'3rem'}}
+        <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        validationSchema={validationSchema}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+          console.log(values);
+        }}
+      >
+
+      <form>
+      <FormControl fullWidth variant="standard">
+        <MyTextInput
           fullWidth
-          type="email"
-          id="email"
+          type="email"   
           name="email"
           label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
         />
-        <FormControl fullWidth style={{ marginBottom: '3rem'}} variant="standard">
-        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-        <Input
-         
-          id="standard-adornment-password"
+        </FormControl>
+        <FormControl fullWidth sx={{ my: '3rem'}} variant="standard">
+        <MyTextInput 
+          label="password"
+          name="password"
           type={values.showPassword ? 'text' : 'password'}
-          value={values.password}
-          onChange={handleChange('password')}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -117,6 +132,7 @@ const validationSchema = yup.object({
           Sign in
         </Button>
       </form>
+      </Formik>
       </Box>
       </Box>
      
