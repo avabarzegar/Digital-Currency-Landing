@@ -131,8 +131,8 @@ const SignIn = () => {
           Sign in
         </Button>
         <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-between',mt:'2rem'}}>
-          <Link to='/ForgetPassword'><Typography sx={{color:'#F1B80A',fontWeight:600,fontSize:'.85rem'}}>Forgot password?</Typography></Link>
-          <Link to='/Register'><Typography sx={{color:'#F1B80A',fontWeight:600,fontSize:'.85rem'}}>Register</Typography></Link>
+          <Link to='/ForgetPassword'><Typography sx={{color:'#F1B80A',fontWeight:500,fontSize:'.85rem'}}>Forgot password?</Typography></Link>
+          <Link to='/Register'><Typography sx={{color:'#F1B80A',fontWeight:500,fontSize:'.85rem'}}>Register</Typography></Link>
         </Box>
       </form>
       </Formik>

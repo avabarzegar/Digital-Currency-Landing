@@ -443,7 +443,7 @@ const RegisterSchema=Yup.object().shape({
                <a style={{fontWeight:'500',color:'#F1B80A',fontSize:'.85rem'}}> KVKK</a> policies. 
             </Typography>
           </Box>
-          <Button component={Link} to='/Register' type="submit" className='registerSubmit registerLinkSubmit'>Register</Button>
+          <Button component={Link} to='/Home' type="submit" className='registerSubmit registerLinkSubmit'>Register</Button>
           <Box sx={{display:{xs:'none',sm:'block'}}}>
             <Typography sx={{fontSize:'.85rem'}}>
               Already registered?

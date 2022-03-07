@@ -14,6 +14,7 @@ import Market from './Market';
 import SignIn from './SignIn';
 import NotFound from './NotFound';
 import Register from './Register';
+import ForgetPassword from './ForgetPassword';
 import CustomizedDialogs from '../components/NavLanCurrency';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -221,6 +222,7 @@ const App = () => {
           <Route path="Mobile" element={<Mobile />}></Route>
           <Route path="Register" element={<Register />}></Route>
           <Route path="SignIn" element={<SignIn />}></Route>
+          <Route path="ForgetPassword" element={<ForgetPassword />}></Route>
           <Route path="*" element={<NotFound />}></Route>
           </Routes>
       </div>
