@@ -28,6 +28,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Horn from '../pictures/horn.png';
 
 
+
 class Slider extends React.Component {
 
   
