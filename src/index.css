@@ -506,11 +506,16 @@ footer p {
   overflow: hidden;
 }
 
-.register-container .css-a88p61-MuiInputBase-root-MuiInput-root:after,
+/* .register-container .css-a88p61-MuiInputBase-root-MuiInput-root:after,
 .register-container .MuiInput-underline:before,
 .register-input:hover,
 .MuiInput-underline:hover:not(.Mui-disabled):before {
-  border: none !important;
+  border-bottom: 0px !important;
+} */
+.register-container .MuiInput-underline:after,
+.register-container .MuiInput-underline:before,
+.register-container .MuiInput-underline:hover:not(.Mui-disabled)::before {
+  border-bottom: 0px solid transparent !important;
 }
 
 .css-1x51dt5-MuiInputBase-input-MuiInput-input {
@@ -586,7 +591,8 @@ footer p {
   text-transform: unset !important;
   color: #000 !important;
 }
-.alreadyLink{
+
+.alreadyLink {
   color: var(--yellow-color) !important;
   font-size: .85rem !important;
   font-weight: 500 !important;
@@ -594,9 +600,7 @@ footer p {
 
 /* /register */
 /* forget-pass */
-.MuiInput-underline:hover:not(.Mui-disabled):before{
-  border-bottom: 1px solid #e6e6e6 !important;
-}
+
 
 /* media-queries */
 @media screen and (max-width:600px) {
@@ -670,5 +674,10 @@ footer p {
   }
 
   /* /navbar */
+  /* register  */
+  .registerInputWidth{
+    width: 100% !important;
+  }
+  /* /register  */
 
 }

@@ -10,6 +10,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Box } from '@mui/system';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 
 
 
@@ -61,14 +65,33 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function CustomizedDialogs() {
-  const [open, setOpen] = React.useState(false);
+  // tabs 
+  const [value, setValue] = React.useState('1');
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
-  const handleClose = () => {
-    setOpen(false);
+  // /tabs 
+  // language 
+  const [openLan, setOpenLan] = React.useState(false);
+
+  const handleClickOpenLan = () => {
+    setOpenLan(true);
   };
+  const handleCloseLan = () => {
+    setOpenLan(false);
+  };
+  // /language 
+  // currency 
+  const [openCur, setOpenCur] = React.useState(false);
+
+  const handleClickOpenCur = () => {
+    setOpenCur(true);
+  };
+  const handleCloseCur = () => {
+    setOpenCur(false);
+  };
+  // /currency 
 
   return (
     <div>
@@ -90,48 +113,60 @@ export default function CustomizedDialogs() {
             },
           }}
         >
-      <BootstrapButton variant="text"  onClick={handleClickOpen}>
+      <BootstrapButton variant="text"  onClick={handleClickOpenLan}>
         English
       </BootstrapButton>
       <Divider className='ln-currency-divider' orientation="vertical" variant="middle" flexItem />
-      <BootstrapButton variant="text"  onClick={handleClickOpen}>
+      <BootstrapButton variant="text"  onClick={handleClickOpenCur}>
         USD
       </BootstrapButton>
       </Box>
+      {/* language  */}
       <BootstrapDialog
-        onClose={handleClose}
+        onClose={handleCloseLan}
         aria-labelledby="customized-dialog-title"
-        open={open}
-      >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+        open={openLan}
+      ><TabContext value={value}>
+        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleCloseLan}>
+         
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Item One" value="1" />
+            <Tab label="Item Two" value="2" />
+            <Tab label="Item Three" value="3" />
+          </TabList>
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography>
-        </DialogContent>
-      </BootstrapDialog>
-
-      <BootstrapDialog
-        onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-      >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
-        </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography>
-        </DialogContent>
-      </BootstrapDialog>
+        
       
+        
+        
+        <TabPanel value="1">Item One</TabPanel>
+        <TabPanel value="2">Item Two</TabPanel>
+        <TabPanel value="3">Item Three</TabPanel>
+      
+    
+        </DialogContent>
+        </TabContext>
+      </BootstrapDialog>
+      {/* /language  */}
+      {/* currency */}
+      <BootstrapDialog
+        onClose={handleCloseCur}
+        aria-labelledby="customized-dialog-title"
+        open={openCur}
+      >
+        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleCloseCur}>
+          Modal title
+        </BootstrapDialogTitle>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+            consectetur ac, vestibulum at eros.
+          </Typography>
+        </DialogContent>
+      </BootstrapDialog>
+      {/* /currency */}
     </div>
     
   );

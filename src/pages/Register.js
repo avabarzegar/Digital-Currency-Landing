@@ -338,7 +338,7 @@ const RegisterSchema=Yup.object().shape({
               />
               </Item>
             </Grid>
-            <Grid sm={6} xs={8} item sx={{mb:'40px'}}>
+            <Grid sm={6} xs={12} item sx={{mb:'40px'}}>
               <Item>
               <InputLabel sx={{lineHeight: '30px'}} htmlFor='referral'>Referral ID (Optional)</InputLabel>
               <MyTextInput
@@ -356,7 +356,7 @@ const RegisterSchema=Yup.object().shape({
               </Item>
             </Grid>
             <Grid container>
-              <Grid sm={4} xs={8} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} htmlFor='firstName'>Name</InputLabel>
                   <MyTextInput
@@ -366,7 +366,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={8} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} htmlFor='lastName'>Surname</InputLabel>
                   <MyTextInput
@@ -376,7 +376,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={8} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
                 <Item>
                   <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} >Date of Birth</InputLabel>
                 </Item>
@@ -384,7 +384,7 @@ const RegisterSchema=Yup.object().shape({
                   <DateSelect />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={8} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} >Citizenship</InputLabel>
                   <Select
@@ -396,7 +396,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={8} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} >Nationality</InputLabel>
                   <Select
@@ -408,7 +408,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={8} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
                 <Item>
                 <InputLabel sx={{lineHeight: '30px'}} htmlFor='turkish'>Turkish ID Number</InputLabel>
                 <MyTextInput
