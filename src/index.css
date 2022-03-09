@@ -88,7 +88,12 @@ nav a:hover {
 .logoimg {
   max-width: 140px;
 }
-
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  width: 100%;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  max-width: 60% !important;
+}
 /* /navbar */
 /* home-pics */
 .css-zgbddb-MuiPaper-root {

@@ -14,7 +14,8 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
+import Tabs from '@mui/material/Tabs';
+import { makeStyles } from '@material-ui/core/styles'
 
 
 const BootstrapButton = styled(Button)({
@@ -39,7 +40,7 @@ const BootstrapDialogTitle = (props) => {
   const { children, onClose, ...other } = props;
 
   return (
-    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+    <DialogTitle sx={{ m: 0,pb:0,color:'#1e2026'}} {...other}>
       {children}
       {onClose ? (
         <IconButton
@@ -99,7 +100,7 @@ export default function CustomizedDialogs() {
         sx={{
             display: 'flex',
             alignItems: 'center',
-            width: 'fit-content',
+            width: '100%',
             border: (theme) => `2px solid ${theme.palette.divider}`,
             borderColor:'white',
             borderRadius: 1,
@@ -126,24 +127,62 @@ export default function CustomizedDialogs() {
         onClose={handleCloseLan}
         aria-labelledby="customized-dialog-title"
         open={openLan}
-      ><TabContext value={value}>
+        sx={{width:'100%'}}
+      >
+        <TabContext value={value}>
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleCloseLan}>
          
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Item One" value="1" />
-            <Tab label="Item Two" value="2" />
-            <Tab label="Item Three" value="3" />
-          </TabList>
+          <Tabs
+           value={value}
+           onChange={handleChange}
+           TabIndicatorProps={{
+            style: {
+              backgroundColor: "#F1B80A"
+            }
+           }}
+          textColor='inherit'
+          aria-label="tabs example"
+          sx={{borderBottom:'1px solid #eaecef'}}
+          >
+            <Tab sx={{pl:0}} label="Language" value="1" />
+            <Tab label="Currency" value="2" />
+          </Tabs>
         </BootstrapDialogTitle>
-        <DialogContent dividers>
-        
-      
-        
-        
-        <TabPanel value="1">Item One</TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel>
-      
+        <DialogContent>
+  
+        <TabPanel sx={{pl:'7px'}} value="1">
+          <Box sx={{display:'flex',flexDirection:'row'}}>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
+                English
+              </Typography>
+            </a>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                Türkçe
+              </Typography>
+            </a>
+          </Box>
+        </TabPanel>
+        <TabPanel value="2" sx={{pl:'7px'}}>
+          <Box sx={{display:'flex',flexDirection:'row'}}>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
+              EUR-€
+              </Typography>
+            </a>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                USD-$
+              </Typography>
+            </a>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                TRY-₺
+              </Typography>
+            </a>
+          </Box>
+        </TabPanel>
     
         </DialogContent>
         </TabContext>
