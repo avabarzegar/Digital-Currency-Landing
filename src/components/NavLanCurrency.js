@@ -66,13 +66,23 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function CustomizedDialogs() {
-  // tabs 
-  const [value, setValue] = React.useState('1');
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  // tabsLan 
+  const [valueLan, setValueLan] = React.useState('1');
+
+  const handleChangeLan = (event, newValue) => {
+    setValueLan(newValue);
   };
-  // /tabs 
+  // /tabsLan 
+
+  // tabsCur 
+  const [valueCur, setValueCur] = React.useState('2');
+
+  const handleChangeCur = (event, newValue) => {
+    setValueCur(newValue);
+  };
+  // /tabsCur 
+
   // language 
   const [openLan, setOpenLan] = React.useState(false);
 
@@ -129,12 +139,12 @@ export default function CustomizedDialogs() {
         open={openLan}
         sx={{width:'100%'}}
       >
-        <TabContext value={value}>
+        <TabContext value={valueLan}>
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleCloseLan}>
          
           <Tabs
-           value={value}
-           onChange={handleChange}
+           value={valueLan}
+           onChange={handleChangeLan}
            TabIndicatorProps={{
             style: {
               backgroundColor: "#F1B80A"
@@ -189,22 +199,72 @@ export default function CustomizedDialogs() {
       </BootstrapDialog>
       {/* /language  */}
       {/* currency */}
+     
       <BootstrapDialog
         onClose={handleCloseCur}
         aria-labelledby="customized-dialog-title"
         open={openCur}
+        sx={{width:'100%'}}
       >
+        <TabContext value={valueCur}>
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleCloseCur}>
-          Modal title
+         
+          <Tabs
+           value={valueCur}
+           onChange={handleChangeCur}
+           TabIndicatorProps={{
+            style: {
+              backgroundColor: "#F1B80A"
+            }
+           }}
+          textColor='inherit'
+          aria-label="tabs example"
+          sx={{borderBottom:'1px solid #eaecef'}}
+          >
+            <Tab sx={{pl:0}} label="Language" value="1" />
+            <Tab label="Currency" value="2" />
+          </Tabs>
         </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography>
+        <DialogContent>
+  
+        <TabPanel sx={{pl:'7px'}} value="1">
+          <Box sx={{display:'flex',flexDirection:'row'}}>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
+                English
+              </Typography>
+            </a>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                Türkçe
+              </Typography>
+            </a>
+          </Box>
+        </TabPanel>
+        <TabPanel value="2" sx={{pl:'7px'}}>
+          <Box sx={{display:'flex',flexDirection:'row'}}>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
+              EUR-€
+              </Typography>
+            </a>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                USD-$
+              </Typography>
+            </a>
+            <a href='#'>
+              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                TRY-₺
+              </Typography>
+            </a>
+          </Box>
+        </TabPanel>
+    
         </DialogContent>
+        </TabContext>
       </BootstrapDialog>
+
       {/* /currency */}
     </div>
     
