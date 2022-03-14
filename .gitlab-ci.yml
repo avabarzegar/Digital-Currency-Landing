@@ -1,18 +1,5 @@
-image: node:14
+include:
+  - project: company/cicd
+    file: /templates/npm.gitlab-ci.yml
 
-stages:
-  - test
-
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
-
-before_script:
-  - yarn
-
-unit_test:
-    stage: test
-    script:
-        - yarn test
-
+    

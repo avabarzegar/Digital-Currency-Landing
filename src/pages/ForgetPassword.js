@@ -6,7 +6,6 @@ import { Box, Typography } from '@mui/material';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-import { Link } from 'react-router-dom';
 import forgetLamp from '../pictures/forgetlamp.svg';
 
 

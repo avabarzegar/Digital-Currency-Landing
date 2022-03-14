@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form, Field, useField } from 'formik';
+import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import Box from '@mui/material/Box';
 import Input from '@mui/material/Input';
@@ -92,12 +92,7 @@ const selectCustomStyles = {
       backgroundColor:'transparent',
       color:'rgba(0,0,0,.5)'
   }),
-  menu: base => ({
-    ...base,
-    "&:hover": {
-      borderColor: "red"
-    }
-  }),
+  
   
   singleValue: (provided, state) => {
     const opacity = state.isDisabled ? 0.5 : 1;
