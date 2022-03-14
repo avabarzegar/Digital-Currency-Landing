@@ -12,10 +12,9 @@ import Divider from '@mui/material/Divider';
 import { Box } from '@mui/system';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Tabs from '@mui/material/Tabs';
-import { makeStyles } from '@material-ui/core/styles'
+
 
 
 const BootstrapButton = styled(Button)({
@@ -162,12 +161,12 @@ export default function CustomizedDialogs() {
   
         <TabPanel sx={{pl:'7px'}} value="1">
           <Box sx={{display:'flex',flexDirection:'row'}}>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
                 English
               </Typography>
             </a>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 Türkçe
               </Typography>
@@ -176,17 +175,17 @@ export default function CustomizedDialogs() {
         </TabPanel>
         <TabPanel value="2" sx={{pl:'7px'}}>
           <Box sx={{display:'flex',flexDirection:'row'}}>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
               EUR-€
               </Typography>
             </a>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 USD-$
               </Typography>
             </a>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 TRY-₺
               </Typography>
@@ -229,12 +228,12 @@ export default function CustomizedDialogs() {
   
         <TabPanel sx={{pl:'7px'}} value="1">
           <Box sx={{display:'flex',flexDirection:'row'}}>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
                 English
               </Typography>
             </a>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 Türkçe
               </Typography>
@@ -243,17 +242,17 @@ export default function CustomizedDialogs() {
         </TabPanel>
         <TabPanel value="2" sx={{pl:'7px'}}>
           <Box sx={{display:'flex',flexDirection:'row'}}>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
               EUR-€
               </Typography>
             </a>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 USD-$
               </Typography>
             </a>
-            <a href='#'>
+            <a href=''>
               <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 TRY-₺
               </Typography>
