@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
 import BootstrapButton from '../components/signup';
 import { Link } from '@mui/material';
-import theme from '../components/ResponsiveTheme';
+import theme from '../components/dTheme';
 import homeImgOne from '../pictures/homeImgOne.png';
 import homeImgTwo from '../pictures/homeImgTwo.png';
 import homeImgThree from '../pictures/homeImgThree.png';
