@@ -1,13 +1,13 @@
 import '../index.css'
-import React from 'react';
+import React, { useContext } from 'react';
 import HomeBg from '../pictures/home-bg.png';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
 import BootstrapButton from '../components/signup';
-import { Link } from '@mui/material';
-import theme from '../components/dTheme';
+import { Button, Link, useMediaQuery, useTheme } from '@mui/material';
+import theme from '../context/Theme';
 import homeImgOne from '../pictures/homeImgOne.png';
 import homeImgTwo from '../pictures/homeImgTwo.png';
 import homeImgThree from '../pictures/homeImgThree.png';
@@ -26,7 +26,20 @@ import BuyCrypto from '../components/BuyCrypto';
 import HomeUpFooter from '../components/HomeUpFooter';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Horn from '../pictures/horn.png';
+import '../context/i18n';
+import { useTranslation } from "react-i18next";
+// import { ThemeContext } from '../context/Theme';
+// import { makeStyles } from '@material-ui/styles';
 
+
+// const useStyle = makeStyles(theme=>({
+//   root:{
+//     color: 'red',
+//     "&:hover": {
+//       color: 'yellow'
+//     }
+//   }
+// }))
 
 
 class Slider extends React.Component {
@@ -82,6 +95,20 @@ class Slider extends React.Component {
 
 const Home = () => {
 
+  // const {
+  //   Direction,
+  //   setDirection,
+  //   Mode,
+  //   setMode
+  // } = useContext(ThemeContext);
+
+  // const theme = useTheme();
+  // const isMd = useMediaQuery(theme.breakpoints.down('md'));
+
+//  const cls = useStyle();
+
+const { t } = useTranslation();
+
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -93,20 +120,35 @@ const Home = () => {
     return(
       <>
       
-      <Box sx={{bgcolor:'#0b0e11'}} >
-        <Container >
-          <img src={HomeBg} alt='homeBg' width='100%' height={360}></img>
-       </Container>
+      <Box sx={{bgcolor:'#0e0c16'}}>
+        <Grid container sx={{display:'flex',justifyContent:'right'}}>
+          <Grid xs={12} md={6}>
+            <img src={HomeBg} alt='homeBg' width='100%' height={360}></img>
+          </Grid>
+          <Grid xs={12} md={6} sx={{display:'flex',direction:'rtl',justifyContent:'right',flexDirection:'column'}}>
+            <Typography sx={{fontSize:'2rem',color:'white'}}>{t('Header-Topic')}</Typography>
+            <Typography sx={{fontSize:'1.2rem',}}>{t('Header-Sub-Topic')}</Typography>
+            <Link to='SignIn' sx={{display:'inline-block',p:'5px 1rem', bgcolor:'#c2a356'}} >{t('Header-Button')}</Link>
+          </Grid>
+
+       </Grid>
       </Box>
+      {/* <Button onClick={()=>setDirection(prev => prev ==  'ltr' ? 'rtl' : 'ltr')}>
+        Change Direction {Direction}
+      </Button>
+      <Button classes={{
+        root: cls.root,
+      
+      }} onClick={()=>setMode(prev => prev == 'dark' ? 'light': 'dark')}>
+        Change Mode
+      </Button> */}
       <Box sx={{bgcolor:'#fafafa',pb:'3rem'}}>
         <Container>
         <Grid container sx={{py:3,alignItems:'start' ,px:1}}>
           <Grid item xs={8}>
-            <ThemeProvider theme={theme}>
             <Typography sx={{color:'black',fontSize:'.9rem'}}>
             Banka transferi ile Türk Lirası yatır. Bitcoin, Ethereum, Ripple ve diğer kriptoparaları kolayca satın al.
             </Typography> 
-            </ThemeProvider>
           </Grid>
           <Grid item xs={4} sx={{textAlign:'end'}}>
             <Link>
