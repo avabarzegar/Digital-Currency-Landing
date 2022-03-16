@@ -125,7 +125,7 @@ const Nationalityoptions = [
   // /selector 
 
 
-const Register = () => {
+const RegisterThird = () => {
   // checkbox 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   // /checkbox 
@@ -454,4 +454,4 @@ const RegisterSchema=Yup.object().shape({
   
 };
 
-export default Register;
+export default RegisterThird;

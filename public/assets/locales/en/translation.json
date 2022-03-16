@@ -1,6 +1,36 @@
 {
+
     "home-header-topic":"buy and sell digital currencies in pouyam exchange",
     "home-header-sub-topic":"all listed currencies in Bainance",
-    "home-header-button":"start buying and selling"
+    "home-header-button":"start buying and selling",
+    "slide-one":"Trade with Binance, Don't Pay Transfer Fees",
+    "time-slide-one":"17/06",
+    "slide-two":"0 Fee Turkish Lira Withdrawal Campaign Extended Again!",
+    "time-slide-two":"17/01",
+    "slide-three":"O Maker Fees for BUSD Trading Pairs Extended!",
+    "time-slide-three":"17/01",
+    "home-faq":"FAQ",
+    "home-faq-txt":"Learn blockchain and cryptocurrency on your schedule and completely free.",
+    "home-more":"More",
+
+
+    "nav-sign-in":"Sign In",
+    "nav-register":"Register",
+    "nav-coins-fundamentals":"Coins Fundamentals",
+    "nav-shop":"Shop",
+    "nav-about":"About us",
+    "nav-contact":"Contact us",
+    "nav-privacy":"Privacy and terms",
+    "nav-faq":"FAQ",
+    "nav-en-tr":"English | TRY",
+
+
+    "register-account-verification":"Account Verification",
+    "register-verification-txt":"Please enter the 4-digits verification code that was sent.The code is valid for 30 minutes. ",
+    "register-create-account":"Create Account",
+    "register-create-account-txt":"Register with your email or mobile",
+    "email-name":"Email",
+    "phone-name":"Phone Number"
+
 
 }

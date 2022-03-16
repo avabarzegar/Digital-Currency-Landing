@@ -6,7 +6,9 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
 import BootstrapButton from '../components/signup';
-import { Button, Link, useMediaQuery, useTheme } from '@mui/material';
+import { Button, useMediaQuery, useTheme } from '@mui/material';
+import LinkMui from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import theme from '../context/Theme';
 import homeImgOne from '../pictures/homeImgOne.png';
 import homeImgTwo from '../pictures/homeImgTwo.png';
@@ -28,6 +30,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Horn from '../pictures/horn.png';
 import '../context/i18n';
 import { useTranslation } from "react-i18next";
+import { t } from 'i18next';
+
 // import { ThemeContext } from '../context/Theme';
 // import { makeStyles } from '@material-ui/styles';
 
@@ -71,23 +75,22 @@ class Slider extends React.Component {
       >
         <SwiperSlide>
           <a href='#'>
-            <Typography className='slider-title'>Trade with Binance, Don't Pay Transfer Fees</Typography>
-            <Typography className='time'>16/07</Typography>
+            <Typography className='slider-title'>{t('slide-one')}</Typography>
+            <Typography className='time'>{t('time-slide-one')}</Typography>
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href='#'>
-            <Typography className='slider-title'>0 Fee Turkish Lira Withdrawal Campaign Extended Again!</Typography>
-            <Typography className='time'>17/01</Typography>
+            <Typography className='slider-title'>{t('slide-two')}</Typography>
+            <Typography className='time'>{t('time-slide-two')}</Typography>
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href='#'>
-            <Typography className='slider-title'>O Maker Fees for BUSD Trading Pairs Extended!</Typography>
-            <Typography className='time'>17/01</Typography>
+            <Typography className='slider-title'>{t('slide-three')}</Typography>
+            <Typography className='time'>{t('time-slide-three')}</Typography>
           </a>
         </SwiperSlide>
-        
       </Swiper>
     );
   }
@@ -124,13 +127,13 @@ const { t } = useTranslation();
         <Container>
         <Grid container sx={{display:'flex',justifyContent:'start',alignItems:'center'}}>
           
-          <Grid xs={12} md={6} sx={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'right'}}>
-            <Typography sx={{fontSize:'2.5rem',fontWeight:'700',color:'white',mb:'2rem'}}>{t('home-header-topic')}</Typography>
+          <Grid xs={12} md={6} sx={{display:'flex',justifyContent:'start',flexDirection:'column',alignItems:{xs:'center',md:'start'}}}>
+            <Typography sx={{fontSize:'2.5rem',fontWeight:'700',color:'white',mb:'2rem',mt:{xs:'2rem',md:'0'},textAlign:{xs:'center',md:'start'}}}>{t('home-header-topic')}</Typography>
             <Typography sx={{fontSize:'1.2rem',color:'white',mb:'2rem'}}>{t('home-header-sub-topic')}</Typography>
-            <Button sx={{p:'5px 1rem', bgcolor:'#c2a356',width:'unset',color:'black'}}>{t('home-header-button')}</Button>
+            <Link to='SignIn'className='filled-btn'>{t('home-header-button')}</Link>
           </Grid>
           <Grid xs={12} md={6}>
-            <img src={HomeBg} alt='homeBg' width='100%' height={360}></img>
+            <img src={HomeBg} alt='homeBg' width='100%' height='auto'></img>
           </Grid>
 
        </Grid>
@@ -154,11 +157,11 @@ const { t } = useTranslation();
             </Typography> 
           </Grid>
           <Grid item xs={4} sx={{textAlign:'end'}}>
-            <Link>
+            <LinkMui>
             <BootstrapButton sx={{padding:'.6rem 1rem'}}>
               Trade now
             </BootstrapButton>
-            </Link>
+            </LinkMui>
           </Grid>
         </Grid>
         <Grid container>
@@ -235,7 +238,7 @@ const { t } = useTranslation();
           <Slider />
           <Box>
             <a href='#' className='slider-more'>
-              <Typography>More</Typography>
+              <Typography>{t('home-more')}</Typography>
               <ArrowForwardIosIcon sx={{p:1,fontSize:'.9rem'}} />
             </a>
           </Box>
@@ -256,10 +259,10 @@ const { t } = useTranslation();
         <Container sx={{px:1,pb:'5rem'}}>
           <Box sx={{pb:5,pt:'5rem'}}>
             <Typography sx={{fontSize:'2.5rem',mb:2,fontWeight:'500'}}>
-              FAQ
+              {t('home-faq')}
             </Typography>
             <Typography sx={{fontSize:'.9rem'}}>
-              Learn blockchain and cryptocurrency on your schedule and completely free.
+              {t('home-faq-txt')}
             </Typography>
           </Box>
           <FAQAccordions />

@@ -5,15 +5,21 @@ import React, { createContext } from "react";
 export const ThemeContext = createContext({});
 
 function Theme(props) {
-
+    
     const [Direction, setDirection] = useState('ltr');
-    const [Mode,setMode] = useState('dark');
+    const [Mode,setMode] = useState('light');
 
     const newTheme = createTheme({
         direction: Direction,
         palette:{
             mode:Mode
-        }
+        },
+        tabs: {
+            
+            "& .Mui-selected": {
+              backgroundColor: "#f5f5f5"
+            }
+          }
     })
 
     useEffect(()=>{

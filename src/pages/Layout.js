@@ -13,7 +13,9 @@ import Deposit from './Deposit';
 import Market from './Market';
 import SignIn from './SignIn';
 import NotFound from './NotFound';
-import Register from './Register';
+import RegisterFirst from './RegisterFirst';
+import RegisterSecond from './RegisterSecond';
+import RegisterThird from './RegisterThird';
 import ForgetPassword from './ForgetPassword';
 import CustomizedDialogs from '../components/NavLanCurrency';
 import IconButton from '@mui/material/IconButton';
@@ -32,9 +34,15 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import DownloadIcon from '@mui/icons-material/Download';
 import LanguageIcon from '@mui/icons-material/Language';
 import Footer from '../components/Footer';
+import '../context/i18n';
+import { useTranslation } from "react-i18next";
+
 
 
 const App = () => {
+
+  const { t }=useTranslation();
+
   const [state, setState] = React.useState({
     right: false,
   });
@@ -49,48 +57,47 @@ const App = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
        <List>
           <ListItem button variant="text" component={Link} to="SignIn" style={{color : 'white'}}>
-            <ListItemText sx={{textAlign:'center'}} primary='Sign in' />
+            <ListItemText sx={{textAlign:'center'}} primary={t('nav-sign-in')} />
           </ListItem>
-          <ListItem to='Register' component={Link} className='CustomBtn' variant="contained"  size='small'>
-            <ListItemText sx={{color: 'black',textAlign:'center'}} primary='Register' />
+          <ListItem to='RegisterFirst' component={Link} className='CustomBtn' variant="contained"  size='small'>
+            <ListItemText sx={{color: 'black',textAlign:'center'}} primary={t('nav-register')} />
           </ListItem>
           <Divider style={{backgroundColor: '#ffffff1a'}} />
           <ListItem button component={Link} to="Market" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <BarChartIcon />    
             </ListItemIcon>
-            <ListItemText primary='Markets' />
+            <ListItemText primary={t('nav-coins-fundamentals')} />
           </ListItem>                  
           <ListItem button component={Link} to="Exchange" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <CurrencyExchangeIcon />
             </ListItemIcon>
-            <ListItemText primary='Exchange' />
+            <ListItemText primary={t('nav-shop')} />
           </ListItem>
           <ListItem button component={Link} to="Deposit" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <AccountBalanceWalletOutlinedIcon />     
             </ListItemIcon>
-            <ListItemText primary='Deposit' /> 
+            <ListItemText primary={t('nav-about')} /> 
           </ListItem>  
           <ListItem button component={Link} to="Withdraw" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <AccountBalanceWalletOutlinedIcon />       
             </ListItemIcon>
-            <ListItemText primary='Withdraw' />    
+            <ListItemText primary={t('nav-contact')} />    
           </ListItem>    
           <ListItem button component={Link} to="Mobile" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <TipsAndUpdatesIcon />     
             </ListItemIcon>
-            <ListItemText primary='Mobile App' />
+            <ListItemText primary={t('nav-privacy')} />
           </ListItem>  
       </List>
       <Divider style={{backgroundColor: '#ffffff1a'}} />
@@ -99,13 +106,13 @@ const App = () => {
             <ListItemIcon style={{color:'#848e9c'}}>
               <DownloadIcon />
             </ListItemIcon>
-            <ListItemText primary='Download' />
+            <ListItemText primary={t('nav-faq')} />
           </ListItem>
           <ListItem button component={Link} to="LanguageIcon" style={{color : 'white'}}>
             <ListItemIcon style={{color:'#848e9c'}}>
               <LanguageIcon />
             </ListItemIcon>
-            <ListItemText primary='English | TRY' />
+            <ListItemText primary={t('nav-en-tr')} />
           </ListItem>
       </List>
     </Box>
@@ -127,7 +134,6 @@ const App = () => {
              src={logo} 
              alt="logo"     
              style={{
-             borderRadius: 40 / 2,
              marginLeft: 15,
              }}
              className='logoimg'
@@ -138,35 +144,40 @@ const App = () => {
           <Grid className='MenuContainer' item xs={6} sx={{justifyContent: 'start', display:{xs: 'none' , md: 'flex'} , alignItems: 'center' , flexDirection: 'row'}}>
           <Grid item >
             <Link to="Market" activeClassName="active">
-              Markets
+            {t('nav-coins-fundamentals')}
             </Link>
           </Grid>
           <Grid item >
             <Link to="Exchange" activeClassName="active">
-            Exchange
+            {t('nav-shop')}
             </Link>
           </Grid>
           <Grid item >
             <Link to="Deposit" activeClassName="active">
-            Deposit
+            {t('nav-about')}
             </Link>
           </Grid>
           <Grid item >
             <Link to="Withdraw" activeClassName="active">
-            Withdraw
+            {t('nav-contact')}
             </Link>
           </Grid>
           <Grid item >
             <Link to="Mobile" activeClassName="active">
-            Mobile App
+            {t('nav-privacy')}
+            </Link>
+          </Grid>
+          <Grid item >
+            <Link to="Faq" activeClassName="active">
+            {t('faq')}
             </Link>
           </Grid>
           </Grid>
           <Grid item xs={4} sx={{justifyContent: 'end', display:{xs: 'none' , md: 'flex'} , alignItems: 'center' , flexDirection: 'row'}}>
-            <Link to="SignIn" button variant="text" sx={{mx: 2, color: 'white',textDecoration: 'none'}}>Sign in</Link>      
-              <Link to="Register"> 
+            <Link to="SignIn" button variant="text" sx={{mx: 2, color: 'white',textDecoration: 'none'}}>{t('nav-sign-in')}</Link>      
+              <Link to="RegisterFirst"> 
               <BootstrapButton variant="contained"  size='small'>
-               Register  
+              {t('nav-register')}  
               </BootstrapButton>
              </Link>
              <CustomizedDialogs />  
@@ -174,9 +185,9 @@ const App = () => {
          
         </Grid>
              <Grid item xs={4} sx={{justifyContent: 'end', display:{xs: 'flex', md: 'none'} , alignItems: 'center' , flexDirection: 'row'}}>
-          <Link to="Register"> 
+          <Link to="RegisterFirst"> 
               <BootstrapButton sx={{display:{xs: 'none',sm:'flex'}}} variant="contained"  size='small'>
-               Register  
+              {t('nav-register')}  
               </BootstrapButton>
              </Link>
             <div sx={{ display: { xs: 'flex', md: 'none' },justifyContent:'end'}}>           
@@ -220,7 +231,9 @@ const App = () => {
           <Route path="Deposit" element={<Deposit />}></Route>
           <Route path="Withdraw" element={<Withdraw />}></Route>
           <Route path="Mobile" element={<Mobile />}></Route>
-          <Route path="Register" element={<Register />}></Route>
+          <Route path="RegisterFirst" element={<RegisterFirst />}></Route>
+          <Route path="RegisterSecond" element={<RegisterSecond />}></Route>
+          <Route path="RegisterThird" element={<RegisterThird />}></Route>
           <Route path="SignIn" element={<SignIn />}></Route>
           <Route path="ForgetPassword" element={<ForgetPassword />}></Route>
           <Route path="*" element={<NotFound />}></Route>

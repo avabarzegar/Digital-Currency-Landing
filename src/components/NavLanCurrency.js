@@ -14,6 +14,10 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
 import Tabs from '@mui/material/Tabs';
+import { ThemeContext } from '../context/Theme';
+import { makeStyles } from '@material-ui/styles';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 
 
@@ -66,6 +70,30 @@ BootstrapDialogTitle.propTypes = {
 
 export default function CustomizedDialogs() {
 
+  const {
+    Lang,
+    setLang
+  }=React.useContext(ThemeContext)
+  
+  const {t}=useTranslation();
+
+  const Languages =[
+    {
+      code:'en',
+      name:'English',
+      countryCode:'gb',
+    },
+    {
+      code:'tr',
+      name:'Türkçe',
+      countryCode:'tr'
+    },
+    {
+      code:'fa',
+      name:'فارسی',
+      countryCode:'ir'
+    }
+  ]
   // tabsLan 
   const [valueLan, setValueLan] = React.useState('1');
 
@@ -110,10 +138,10 @@ export default function CustomizedDialogs() {
             display: 'flex',
             alignItems: 'center',
             width: '100%',
-            border: (theme) => `2px solid ${theme.palette.divider}`,
+            
             borderColor:'white',
             borderRadius: 1,
-            bgcolor: 'background.paper',
+            bgcolor: 'transparent',
             color: 'text.secondary',
             '& svg': {
               m: 1.5,
@@ -161,34 +189,30 @@ export default function CustomizedDialogs() {
   
         <TabPanel sx={{pl:'7px'}} value="1">
           <Box sx={{display:'flex',flexDirection:'row'}}>
-            <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
-                English
-              </Typography>
-            </a>
-            <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
-                Türkçe
-              </Typography>
-            </a>
+            {Languages.map(({code,name,countryCode})=>(
+              <Button onClick={()=> i18next.changeLanguage(code)} sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                {name}
+              </Button>
+            ))}
+
           </Box>
         </TabPanel>
         <TabPanel value="2" sx={{pl:'7px'}}>
           <Box sx={{display:'flex',flexDirection:'row'}}>
             <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
+              <Button sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
               EUR-€
-              </Typography>
+              </Button>
             </a>
             <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+              <Button sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 USD-$
-              </Typography>
+              </Button>
             </a>
             <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+              <Button sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 TRY-₺
-              </Typography>
+              </Button>
             </a>
           </Box>
         </TabPanel>
@@ -228,34 +252,29 @@ export default function CustomizedDialogs() {
   
         <TabPanel sx={{pl:'7px'}} value="1">
           <Box sx={{display:'flex',flexDirection:'row'}}>
-            <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
-                English
-              </Typography>
-            </a>
-            <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
-                Türkçe
-              </Typography>
-            </a>
+          {Languages.map(({code,name,countryCode})=>(
+              <Button onClick={()=> i18next.changeLanguage(code)} sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+                {name}
+              </Button>
+            ))}
           </Box>
         </TabPanel>
         <TabPanel value="2" sx={{pl:'7px'}}>
           <Box sx={{display:'flex',flexDirection:'row'}}>
             <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
+              <Button sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px',border:'1px solid #f0b90b'}}>
               EUR-€
-              </Typography>
+              </Button>
             </a>
             <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+              <Button sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 USD-$
-              </Typography>
+              </Button>
             </a>
             <a href=''>
-              <Typography sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
+              <Button sx={{color:'#1e2026',mr:2,py:'.3rem',pl:'.5rem',pr:'4rem',borderRadius: '4px'}}>
                 TRY-₺
-              </Typography>
+              </Button>
             </a>
           </Box>
         </TabPanel>

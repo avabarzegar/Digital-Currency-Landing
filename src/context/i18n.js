@@ -9,7 +9,7 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    
+    supportedLngs:['tr','en','fa'],
     fallbackLng: "tr",
     // lng 
     detection:{
