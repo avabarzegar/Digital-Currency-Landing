@@ -10,14 +10,14 @@ i18n
   .use(HttpApi)
   .init({
     
-    fallbackLng: "en",
+    fallbackLng: "tr",
     // lng 
     detection:{
       order: [ 'cookie','htmlTag', 'localStorage', 'sessionStorage', 'path', 'subdomain'],
       caches:['cookie'],
     },
     backend:{
-      loadPath: '/assets/locales/{{lng}}/translation.json',
+      loadPath: '../assets/locales/{{lng}}/translation.json',
 
     },
     react:{useSuspense:false}

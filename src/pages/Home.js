@@ -121,17 +121,20 @@ const { t } = useTranslation();
       <>
       
       <Box sx={{bgcolor:'#0e0c16'}}>
-        <Grid container sx={{display:'flex',justifyContent:'right'}}>
+        <Container>
+        <Grid container sx={{display:'flex',justifyContent:'start',alignItems:'center'}}>
+          
+          <Grid xs={12} md={6} sx={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'right'}}>
+            <Typography sx={{fontSize:'2.5rem',fontWeight:'700',color:'white',mb:'2rem'}}>{t('home-header-topic')}</Typography>
+            <Typography sx={{fontSize:'1.2rem',color:'white',mb:'2rem'}}>{t('home-header-sub-topic')}</Typography>
+            <Button sx={{p:'5px 1rem', bgcolor:'#c2a356',width:'unset',color:'black'}}>{t('home-header-button')}</Button>
+          </Grid>
           <Grid xs={12} md={6}>
             <img src={HomeBg} alt='homeBg' width='100%' height={360}></img>
           </Grid>
-          <Grid xs={12} md={6} sx={{display:'flex',direction:'rtl',justifyContent:'right',flexDirection:'column'}}>
-            <Typography sx={{fontSize:'2rem',color:'white'}}>{t('Header-Topic')}</Typography>
-            <Typography sx={{fontSize:'1.2rem',}}>{t('Header-Sub-Topic')}</Typography>
-            <Link to='SignIn' sx={{display:'inline-block',p:'5px 1rem', bgcolor:'#c2a356'}} >{t('Header-Button')}</Link>
-          </Grid>
 
        </Grid>
+       </Container>
       </Box>
       {/* <Button onClick={()=>setDirection(prev => prev ==  'ltr' ? 'rtl' : 'ltr')}>
         Change Direction {Direction}
@@ -156,6 +159,50 @@ const { t } = useTranslation();
               Trade now
             </BootstrapButton>
             </Link>
+          </Grid>
+        </Grid>
+        <Grid container>
+          <Grid item md={3} sm={6} xs={12}>
+            <Item>
+            <img src={homeImgOne} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+            </Item>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+          <Item>
+           <img src={homeImgTwo} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           </Item>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+          <Item>
+           <img src={homeImgThree} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           </Item>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+          <Item>
+           <img src={homeImgFour} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           </Item>
+          </Grid>
+        </Grid>
+        <Grid container>
+          <Grid item md={3} sm={6} xs={12}>
+            <Item>
+            <img src={homeImgOne} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+            </Item>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+          <Item>
+           <img src={homeImgTwo} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           </Item>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+          <Item>
+           <img src={homeImgThree} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           </Item>
+          </Grid>
+          <Grid item md={3} sm={6} xs={12}>
+          <Item>
+           <img src={homeImgFour} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           </Item>
           </Grid>
         </Grid>
         <Grid container>
