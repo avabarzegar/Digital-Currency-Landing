@@ -74,25 +74,25 @@ const rows = [
   createData(<BTCLogo />,
   <Typography className='last-price' >€ 552,117</Typography>, 
   <Typography className='fall-loss'>1.29%</Typography>,
-  <div sx={{width:'100px'}}>
+  <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
   <img src={currencyChart} alt='chart1'></img>
   </div> ),
   createData(<ETHLogo />,
   <Typography className='last-price' >€ 39,084</Typography>, 
   <Typography className='rise-gain'>1.09%</Typography>,
-  <div sx={{width:'100px'}}>
+  <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
   <img src={currencyChart} alt='chart2'></img>
   </div> ),
   createData(<BNBLogo />,
   <Typography className='last-price' >€ 5,269</Typography>,
    <Typography className='rise-gain'>0.80%</Typography>,
-   <div sx={{width:'100px'}}>
+   <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
    <img src={currencyChart} alt='chart3'></img>
    </div> ),
   createData(<USDTLogo />,
   <Typography className='last-price' >€ 13.92</Typography>,
    <Typography className='fall-loss'>1.13%</Typography>,
-   <div sx={{width:'100px'}}>
+   <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
    <img src={currencyChart} alt='chart4'></img>
    </div> ),
 ];
@@ -106,7 +106,7 @@ export default function PriceTable() {
             <TableCell>Name</TableCell>
             <TableCell >Last Price</TableCell>
             <TableCell>24h Change</TableCell>
-            <TableCell >Markets</TableCell>
+            <TableCell sx={{display:{xs:'none',sm:'flex'}}}>Markets</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -116,12 +116,12 @@ export default function PriceTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               component={Link} to='signIn'
             >
-              <TableCell scope="row" sx={{width:{sm:'25%',sx:'50%'}}}>
+              <TableCell scope="row" sx={{width:{xs:'30%',sm:'25%'}}}>
                 {row.name}
               </TableCell>
-              <TableCell >{row.lastPrice}</TableCell>
-              <TableCell>{row.changes}</TableCell>
-              <TableCell >{row.markets}</TableCell>
+              <TableCell sx={{width:{xs:'30%',sm:'25%'}}}>{row.lastPrice}</TableCell>
+              <TableCell sx={{width:{xs:'30%',sm:'25%'}}}>{row.changes}</TableCell>
+              <TableCell sx={{display:{xs:'none',sm:'flex'}}}>{row.markets}</TableCell>
             </TableRow>
           ))}
         </TableBody>

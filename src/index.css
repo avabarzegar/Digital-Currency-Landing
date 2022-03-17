@@ -26,8 +26,8 @@ a {
   cursor: pointer !important;
 }
 
-button{
-  text-transform:unset !important;
+button {
+  text-transform: unset !important;
 }
 
 button:focus {
@@ -201,7 +201,7 @@ nav a:hover {
 
 .css-quj9j6-MuiTable-root {
   background: #fff;
-
+  min-width: unset !important;
   border-radius: 5px;
 }
 
@@ -254,16 +254,19 @@ nav a:hover {
 
 /* /table-price */
 /* app-section */
-.app-wallet-img{
+.app-wallet-img {
   padding: 10px;
- 
+
 }
-.google-palay-btn{
-  
+
+.google-palay-btn {
+  display: flex;
   flex-direction: row;
-  
-  font-size: .9rem;
+text-align: start;
+ align-items: center;
+  padding: 15px 1.5rem;
 }
+
 /* /app-section */
 
 /* buy-crypto */
@@ -300,9 +303,11 @@ nav a:hover {
   margin-bottom: 8px;
 
 }
-.css-1bqtrqq-MuiPaper-root-MuiAccordion-root{
+
+.css-1bqtrqq-MuiPaper-root-MuiAccordion-root {
   background-color: white !important;
 }
+
 .css-ta84vm-MuiAccordionDetails-root .css-ahj2mt-MuiTypography-root {
   padding: 0px 40px !important;
   line-height: 24px;
@@ -700,7 +705,7 @@ footer p {
 
 /* /register-second-section  */
 /* register-first-section  */
- .register-first-container{
+.register-first-container {
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -708,8 +713,9 @@ footer p {
   border-radius: 6px;
   padding: 48px 18px;
   overflow: hidden;
-  
-} 
+
+}
+
 /* .register-first-container .MuiInput-underline:after {
   border: 1px solid var(--yellow-color) !important;
 }  */

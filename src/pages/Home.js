@@ -33,6 +33,7 @@ import { useTranslation } from "react-i18next";
 import { t } from 'i18next';
 import appwallet from '../pictures/appwallet.png';
 import phone from '../pictures/phone.png';
+import googleplay from '../pictures/googleplay.png';
 
 // import { ThemeContext } from '../context/Theme';
 // import { makeStyles } from '@material-ui/styles';
@@ -263,8 +264,10 @@ const { t } = useTranslation();
               </Typography>
               <Typography sx={{color:'#474D57',fontSize:'20px',lineHeight:'30px',mt:'10px',mb:'3.5rem',textAlign:{xs:'center',md:'start'}}}>{t('pouyam-application-txt')}</Typography>
               <a href='' className='google-palay-btn filled-btn'>
-                {t('application-google-play')}
-
+                <Typography sx={{fontSize:'.8rem',fontWeight:'500',px:'5px'}}>{t('application-google-play')}</Typography>
+                <span> 
+                  <img src={googleplay} style={{px:'5px'}} alt='googleplay' width={23} height={23}></img>
+                </span>
               </a>
             </Grid>
               <Grid container xs={12} md={7} sx={{display:'flex',flexDirection:'row',justifyContent:{sm:'end',xs:'start'}}}>
