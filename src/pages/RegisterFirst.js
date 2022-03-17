@@ -84,7 +84,7 @@ export default function LabTabs() {
   };
 
   return (
-    <Box sx={{bgcolor:'#fafafa', width: '100%', typography: 'body1' }}>
+    <Box sx={{bgcolor:'#fafafa', width: '100%', typography: 'body1', paddingBottom: '7rem',paddingTop: '4rem' }}>
       <Box className='register-first-container' sx={{pt:5,mx:'auto',width: '400px',display:'flex',alignItems:'start',flexDirection:'column'}}>
           <Typography sx={{mb:'.5rem',fontSize:'1.5rem',fontWeight:'600'}}>{t('register-create-account')}</Typography>
           <Typography sx={{mb:'2rem',color:'#848e9c',fontSize:'.88rem'}}>{t('register-create-account-txt')}</Typography>
