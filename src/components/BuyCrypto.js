@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 export default function BuyCrypto(){
     return(   
-    <Box sx={{bgcolor:'white'}}>
+    <Box sx={{bgcolor:'#fafafa'}}>
       <Container sx={{px:1}}>
         <Typography sx={{textAlign:'center',fontSize:'2.2rem',fontWeight:'500',py:5}}>
         You Can Start Buying Crypto Easily in 4 Steps

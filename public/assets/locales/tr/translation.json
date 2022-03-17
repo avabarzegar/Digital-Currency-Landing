@@ -1,7 +1,46 @@
 {
     "home-header-topic":"pouyam borsasında dijital para alım ve satımı",
     "home-header-sub-topic":"binance'de listelenen tüm para birimleri",
-    "home-header-button":"alıp satmaya başla"
+    "home-header-button":"alıp satmaya başla",
+    "slide-one":"",
+    "time-slide-one":"",
+    "slide-two":"",
+    "time-slide-two":"",
+    "slide-three":"",
+    "time-slide-three":"",
+    "faq":"",
+    "home-faq-txt":"",
+    "home-more":"",
+
+
+    "nav-sign-in":"",
+    "nav-register":"",
+    "nav-coins-fundamentals":"",
+    "nav-shop":"",
+    "nav-about":"",
+    "nav-contact":"",
+    "nav-privacy":"",
+    "nav-en-tr":"",
+
+
+    "register-account-verification":"",
+    "register-verification-txt":"",
+    "register-create-account":"",
+    "register-create-account-txt":"",
+    "email-name":"",
+    "phone-name":"",
+    "register-resend-code":"",
+    "resend-code-in":"",
+
+    "pouyam-application":"",
+    "pouyam-application-txt":"",
+    "application-benefit-one":"",
+    "application-benefit-title-one":"",
+    "application-benefit-title-two":"",
+    "application-benefit-two":"",
+    "application-benefit-title-three":"",
+    "application-benefit-three":"",
+    "application-google-play":""
     
 
 }

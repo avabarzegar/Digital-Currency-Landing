@@ -31,6 +31,8 @@ import Horn from '../pictures/horn.png';
 import '../context/i18n';
 import { useTranslation } from "react-i18next";
 import { t } from 'i18next';
+import appwallet from '../pictures/appwallet.png';
+import phone from '../pictures/phone.png';
 
 // import { ThemeContext } from '../context/Theme';
 // import { makeStyles } from '@material-ui/styles';
@@ -251,15 +253,74 @@ const { t } = useTranslation();
         </Container>
       </Box>
       {/* /price-table */}
+      {/* application */}
+      <Box sx={{bgcolor:'white',py:'5rem'}}>
+        <Container>
+            <Grid container> 
+            <Grid xs={12} md={5} sx={{display:'flex',justifyContent:'center',flexDirection:'column',mb:'4rem',alignItems:{xs:'center',md:'start'}}}>
+              <Typography sx={{fontSize:'40px',fontWeight:'600',lineHeight:'48px'}}>
+                {t('pouyam-application')}
+              </Typography>
+              <Typography sx={{color:'#474D57',fontSize:'20px',lineHeight:'30px',mt:'10px',mb:'3.5rem',textAlign:{xs:'center',md:'start'}}}>{t('pouyam-application-txt')}</Typography>
+              <a href='' className='google-palay-btn filled-btn'>
+                {t('application-google-play')}
+
+              </a>
+            </Grid>
+              <Grid container xs={12} md={7} sx={{display:'flex',flexDirection:'row',justifyContent:{sm:'end',xs:'start'}}}>
+                <Grid xs={12} sm={6} sx={{textAlign:'center',mb:'2rem'}}>
+                  <img src={phone} alt='app-phone'></img>
+                </Grid>
+                <Grid xs={12} sm={6} sx={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
+                  <Box sx={{display:'flex',flexDirection:'row',mb:'2rem'}}>
+                  <Typography sx={{bgcolor:'#ddbb6630',mr:'1rem',width:'48px',height:'48px',justifyContent:'center',alignItems:'center',borderRadius:'50%'}}>
+                    <img src={appwallet} alt='wallet' width={28} height={28} className='app-wallet-img'></img>
+                  </Typography>
+                  <Typography sx={{display:'flex',flexDirection:'column'}}>
+                    <Typography sx={{fontWeight:'600',fontSize:'20px'}}>
+                     {t('application-benefit-title-one')} 
+                    </Typography>
+                    <Typography sx={{color:'#707A8A'}}>{t('application-benefit-one')}</Typography>
+                  </Typography>
+                  </Box>
+                  <Box sx={{display:'flex',flexDirection:'row',mb:'2rem'}}>
+                  <Typography sx={{bgcolor:'#ddbb6630',mr:'1rem',width:'48px',height:'48px',justifyContent:'center',alignItems:'center',borderRadius:'50%'}}>
+                     <img src={appwallet} alt='wallet' width={28} height={28} className='app-wallet-img'></img>
+                  </Typography>
+                  <Typography sx={{display:'flex',flexDirection:'column'}}>
+                    <Typography sx={{fontWeight:'600',fontSize:'20px'}}>
+                     {t('application-benefit-title-two')} 
+                    </Typography>
+                    <Typography sx={{color:'#707A8A'}}>{t('application-benefit-two')}</Typography>
+                  </Typography>
+                  </Box>
+                  <Box sx={{display:'flex',flexDirection:'row',mb:'2rem'}}>
+                  <Typography sx={{bgcolor:'#ddbb6630',mr:'1rem',width:'48px',height:'48px',justifyContent:'center',alignItems:'center',borderRadius:'50%'}}>
+                     <img src={appwallet} alt='wallet' width={28} height={28} className='app-wallet-img'></img>
+                  </Typography>
+                  <Typography sx={{display:'flex',flexDirection:'column'}}>
+                    <Typography sx={{fontWeight:'600',fontSize:'20px'}}>
+                     {t('application-benefit-title-three')} 
+                    </Typography>
+                    <Typography sx={{color:'#707A8A'}}>{t('application-benefit-three')}</Typography>
+                  </Typography>
+                  </Box>
+                </Grid>
+              </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      {/* application */}
+
       {/* Buy-crypto */}
       <BuyCrypto />
       {/* /Buy-crypto */}
       {/* FAQ */}
-      <Box sx={{bgcolor:'#fafafa'}}>
+      <Box sx={{bgcolor:'white'}}>
         <Container sx={{px:1,pb:'5rem'}}>
           <Box sx={{pb:5,pt:'5rem'}}>
             <Typography sx={{fontSize:'2.5rem',mb:2,fontWeight:'500'}}>
-              {t('home-faq')}
+              {t('faq')}
             </Typography>
             <Typography sx={{fontSize:'.9rem'}}>
               {t('home-faq-txt')}

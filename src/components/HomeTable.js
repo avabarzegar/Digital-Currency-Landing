@@ -18,8 +18,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 
-function createData(name, lastPrice, changes, markets, buy) {
-  return { name, lastPrice, changes, markets, buy };
+function createData(name, lastPrice, changes, markets) {
+  return { name, lastPrice, changes, markets };
 }
 function BTCLogo(){
     return(
@@ -76,37 +76,25 @@ const rows = [
   <Typography className='fall-loss'>1.29%</Typography>,
   <div sx={{width:'100px'}}>
   <img src={currencyChart} alt='chart1'></img>
-  </div>,
-  <Link className='buy-button' to='signIn'>
-    buy
-  </Link>, ),
+  </div> ),
   createData(<ETHLogo />,
   <Typography className='last-price' >€ 39,084</Typography>, 
   <Typography className='rise-gain'>1.09%</Typography>,
   <div sx={{width:'100px'}}>
   <img src={currencyChart} alt='chart2'></img>
-  </div>,
-  <Link className='buy-button' to='signIn'>
-    buy
-  </Link> ),
+  </div> ),
   createData(<BNBLogo />,
   <Typography className='last-price' >€ 5,269</Typography>,
    <Typography className='rise-gain'>0.80%</Typography>,
    <div sx={{width:'100px'}}>
    <img src={currencyChart} alt='chart3'></img>
-   </div>,
-   <Link className='buy-button' to='signIn'>
-     buy
-   </Link> ),
+   </div> ),
   createData(<USDTLogo />,
   <Typography className='last-price' >€ 13.92</Typography>,
    <Typography className='fall-loss'>1.13%</Typography>,
    <div sx={{width:'100px'}}>
    <img src={currencyChart} alt='chart4'></img>
-   </div>,
-   <Link className='buy-button' to='signIn'>
-     buy
-   </Link> ),
+   </div> ),
 ];
 
 export default function PriceTable() {
@@ -119,7 +107,6 @@ export default function PriceTable() {
             <TableCell >Last Price</TableCell>
             <TableCell>24h Change</TableCell>
             <TableCell >Markets</TableCell>
-            <TableCell>buy</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -135,7 +122,6 @@ export default function PriceTable() {
               <TableCell >{row.lastPrice}</TableCell>
               <TableCell>{row.changes}</TableCell>
               <TableCell >{row.markets}</TableCell>
-              <TableCell>{row.buy}</TableCell>
             </TableRow>
           ))}
         </TableBody>

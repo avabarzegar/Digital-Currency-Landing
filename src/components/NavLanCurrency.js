@@ -18,6 +18,7 @@ import { ThemeContext } from '../context/Theme';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+import Cookies from 'js-cookie';
 
 
 
@@ -70,30 +71,37 @@ BootstrapDialogTitle.propTypes = {
 
 export default function CustomizedDialogs() {
 
-  const {
-    Lang,
-    setLang
-  }=React.useContext(ThemeContext)
-  
-  const {t}=useTranslation();
-
   const Languages =[
     {
       code:'en',
       name:'English',
       countryCode:'gb',
+      dir:'ltr'
     },
     {
       code:'tr',
       name:'Türkçe',
-      countryCode:'tr'
+      countryCode:'tr',
+      dir:'ltr'
     },
     {
       code:'fa',
       name:'فارسی',
-      countryCode:'ir'
+      countryCode:'ir',
+      dir:'rtl'
     }
   ]
+  const {t}=useTranslation();
+  
+  const CurrentLanguageCode=Cookies.get('i18next') || 'en';
+  const CurrentLanguage=Languages.find( l => l.code === CurrentLanguageCode)
+ 
+  
+
+  React.useEffect(()=>{
+    document.body.dir=CurrentLanguage.dir || 'ltr'
+  },[CurrentLanguage])
+
   // tabsLan 
   const [valueLan, setValueLan] = React.useState('1');
 
@@ -152,7 +160,7 @@ export default function CustomizedDialogs() {
           }}
         >
       <BootstrapButton variant="text"  onClick={handleClickOpenLan}>
-        English
+        {CurrentLanguage.name}
       </BootstrapButton>
       <Divider className='ln-currency-divider' orientation="vertical" variant="middle" flexItem />
       <BootstrapButton variant="text"  onClick={handleClickOpenCur}>

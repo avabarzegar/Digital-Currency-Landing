@@ -11,7 +11,7 @@ import FAQ from '../pictures/FAQ.svg';
 
 export default function InTouch(){
     return(
-      <Box>
+      <Box sx={{bgcolor:'#fafafa'}}>
         <Container sx={{px:1}}>
         <Typography sx={{textAlign:'center',fontSize:'2.2rem',fontWeight:'500',pt:'5rem'}}>
         Get in touch. Stay in touch.

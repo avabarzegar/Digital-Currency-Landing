@@ -253,6 +253,19 @@ nav a:hover {
 }
 
 /* /table-price */
+/* app-section */
+.app-wallet-img{
+  padding: 10px;
+ 
+}
+.google-palay-btn{
+  
+  flex-direction: row;
+  
+  font-size: .9rem;
+}
+/* /app-section */
+
 /* buy-crypto */
 .crypto-img-container {
   width: 80px;
@@ -287,7 +300,9 @@ nav a:hover {
   margin-bottom: 8px;
 
 }
-
+.css-1bqtrqq-MuiPaper-root-MuiAccordion-root{
+  background-color: white !important;
+}
 .css-ta84vm-MuiAccordionDetails-root .css-ahj2mt-MuiTypography-root {
   padding: 0px 40px !important;
   line-height: 24px;
