@@ -1,8 +1,4 @@
 import * as React from 'react';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import Tabs from '@mui/material/Tabs';
-import TabPanel from '@mui/lab/TabPanel';
 import '../context/i18n';
 import { useTranslation } from "react-i18next";
 import { Formik, useField } from 'formik';
@@ -17,6 +13,71 @@ import VisibilityOff from '@mui/icons-material/VisibilityOffOutlined';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import { Link } from 'react-router-dom';
+import { styled } from '@mui/system';
+import TabsUnstyled from '@mui/base/TabsUnstyled';
+import TabsListUnstyled from '@mui/base/TabsListUnstyled';
+import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
+import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+
+
+
+const gray = {
+  200: '#f5f5f5',
+  300:'#707a8a'
+ 
+};
+
+const Tab = styled(TabUnstyled)`
+  color: ${gray[300]};
+  font-weight: 500;
+  font-size: 1rem;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  padding: 12px 16px;
+  margin: 6px 6px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+
+  &:hover {
+    background-color: ${gray[200]};
+  }
+
+  &:focus {
+    color: black;
+    background-color: ${gray[200]};
+    outline-offset: 2px;
+    
+  }
+
+  &.${tabUnstyledClasses.selected} {
+    color: black;
+    background-color:${gray[200]};
+  }
+
+  &.${buttonUnstyledClasses.disabled} {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+`;
+
+const TabPanel = styled(TabPanelUnstyled)`
+  width: 100%;
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+`;
+
+const TabsList = styled(TabsListUnstyled)`
+  
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
+`;
 
 
 
@@ -26,10 +87,6 @@ export default function LabTabs() {
         showPassword: false,
       });
       
-     
-      const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-      };
     
       const handleClickShowPassword = () => {
         setValues({
@@ -77,85 +134,20 @@ export default function LabTabs() {
 
   const {t}=useTranslation();
 
-  const [value, setValue] = React.useState('1');
-
-  const handleChangeTabs = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <Box sx={{bgcolor:'#fafafa', width: '100%', typography: 'body1', paddingBottom: '7rem',paddingTop: '4rem' }}>
       <Box className='register-first-container' sx={{pt:5,mx:'auto',width: '400px',display:'flex',alignItems:'start',flexDirection:'column'}}>
           <Typography sx={{mb:'.5rem',fontSize:'1.5rem',fontWeight:'600'}}>{t('register-create-account')}</Typography>
-          <Typography sx={{mb:'2rem',color:'#848e9c',fontSize:'.88rem'}}>{t('register-create-account-txt')}</Typography>
-        <TabContext value={value}>
-        <Box>
-          <Tabs
-          TabIndicatorProps={{
-            style: {
-              backgroundColor: "#f5f5f5"
-            }
-           }}
-          textColor='inherit'
-          inkBarStyle={{background: 'blue'}}
-          aria-label="tabs example"
-          onChange={handleChangeTabs}
-          >
-            <Tab sx={{pl:0}} label={t('phone-name')} value="1" />
-            <Tab sx={{pl:0}} label={t('email-name')} value="2" />
-          </Tabs>
-        </Box>
-        <TabPanel sx={{pl:0}} value="1">
-        <Formik
-        initialValues={{
-          phone: '',
-          password: '',
-        }}
-        validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
-          console.log(values);
-        }}
-      >
-
-      <form>
-        <FormControl fullWidth variant="standard">
-        <MyTextInput
-          type='tel'                    
-          name='number'
-          label='phone number'
-          id='number'
-        />
-        </FormControl>
-        <FormControl fullWidth sx={{ my: '3rem'}} variant="standard">
-        <MyTextInput 
-          label="password"
-          name="password"
-          type={values.showPassword ? 'text' : 'password'}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-              >
-                {values.showPassword ? <Visibility sx={{fontSize:'.95rem',color:'#9c9c9c'}} /> : <VisibilityOff sx={{fontSize:'.95rem',color:'#9c9c9c'}} />}
-              </IconButton>
-            </InputAdornment>
-          }
-        />
-        </FormControl>
-        <Button component={Link} to='/RegisterSecond' className='sign-btn' variant="contained" fullWidth type="submit">
-         {t('register-create-account')}
-        </Button>
+          <Typography sx={{mb:'3rem',color:'#848e9c',fontSize:'.88rem'}}>{t('register-create-account-txt')}</Typography>
         
-      </form>
-        </Formik>
-        </TabPanel>
-        <TabPanel sx={{pl:0}} value="2">
+      
+        <TabsUnstyled defaultValue={0}>
+            <TabsList>
+              <Tab sx={{pl:0,m:0}}>{t('email-name')}</Tab>
+              <Tab sx={{pl:0,m:0}}>{t('phone-name')}</Tab>
+            </TabsList>
+        <TabPanel sx={{pl:0}} value={0}>
         <Formik
         initialValues={{
           email: '',
@@ -206,8 +198,62 @@ export default function LabTabs() {
         </Formik>
         </TabPanel>
         
-      </TabContext>
+      
+        <TabPanel sx={{pl:0}} value={1}>
+        <Formik
+        initialValues={{
+          phone: '',
+          password: '',
+        }}
+        validationSchema={validationSchema}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+          console.log(values);
+        }}
+      >
+
+      <form>
+        <FormControl fullWidth variant="standard">
+        <MyTextInput
+          type='tel'                    
+          name='number'
+          label='phone number'
+          id='number'
+        />
+        </FormControl>
+        <FormControl fullWidth sx={{ my: '3rem'}} variant="standard">
+        <MyTextInput 
+          label="password"
+          name="password"
+          type={values.showPassword ? 'text' : 'password'}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {values.showPassword ? <Visibility sx={{fontSize:'.95rem',color:'#9c9c9c'}} /> : <VisibilityOff sx={{fontSize:'.95rem',color:'#9c9c9c'}} />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+        </FormControl>
+        <Button component={Link} to='/RegisterSecond' className='sign-btn' variant="contained" fullWidth type="submit">
+         {t('register-create-account')}
+        </Button>
+        
+      </form>
+        </Formik>
+        </TabPanel>
+        
+        </TabsUnstyled>
+      
       </Box>
     </Box>
   );
 }
+

@@ -43,9 +43,9 @@ export default function RegisterSecond(){
                  <span style={{color:"#F1B80A",fontWeight:"bold"}}> 00:{counter}</span>
                 </Typography>
             </Box>
-            <Link to='/RegisterThird' disabled={false} sx={{textAlign:'start',color:'#212833',mt:1}} onClick={'code'} >
+            <Button component={Link} to='/RegisterThird' disabled={false} sx={{textAlign:'start',color:'#212833',mt:1}}>
             {t('register-resend-code')}
-            </Link>
+            </Button>
         </Box>
         </Box>  
         </Box>
