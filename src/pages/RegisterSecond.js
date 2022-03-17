@@ -5,6 +5,7 @@ import { Box, Typography } from '@mui/material';
 import '../context/i18n';
 import { useTranslation } from "react-i18next";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { Link } from "react-router-dom";
 
 
 
@@ -20,7 +21,7 @@ export default function RegisterSecond(){
       counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
       return () => clearInterval(timer);
   }, [counter]);
-  
+  // /Timer 
 
     return(
         <Box className="registerSecond-parent">
@@ -38,13 +39,13 @@ export default function RegisterSecond(){
           <Box sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
             <Box mt={3} >
                 <Typography fontSize=".75rem" align="center" color='gray'>
-                Resend Code in
+                {t('resend-code-in')}
                  <span style={{color:"#F1B80A",fontWeight:"bold"}}> 00:{counter}</span>
                 </Typography>
             </Box>
-            <Button disabled={false} sx={{textAlign:'start',color:'#212833',mt:1}} onClick={'code'} >
-            Resend Code
-            </Button>
+            <Link to='/RegisterThird' disabled={false} sx={{textAlign:'start',color:'#212833',mt:1}} onClick={'code'} >
+            {t('register-resend-code')}
+            </Link>
         </Box>
         </Box>  
         </Box>

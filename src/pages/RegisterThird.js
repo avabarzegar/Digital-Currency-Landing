@@ -170,9 +170,6 @@ const RegisterThird = () => {
   // /password 
   // validation 
 const RegisterSchema=Yup.object().shape({
-  email: Yup.string()
-    .email('Invalid email address.')
-    .required('Please enter a valid email.'),
   password: Yup.string()
     .min(8, 'Must be 8 characters at least.')
     .max(16, 'Must be 16 characters or less.')
@@ -187,12 +184,6 @@ const RegisterSchema=Yup.object().shape({
     )
     })
     .required('Must be at least 8 characters and contain at least one uppercase, one lowercase letter and one number.'),
-  number: Yup.string()
-    .required('Please enter a valid number.')
-    .matches(
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-    'Please enter a valid number'
-  ),
   referral:Yup.string()
     .min(8, 'Please enter correct refferal ID.'),
   firstName:Yup.string()
@@ -243,9 +234,8 @@ const RegisterSchema=Yup.object().shape({
         
         <Formik
         initialValues={{
-          email: '',
           password: '',
-          number:'',
+          
          
         }}
         validationSchema={RegisterSchema}
@@ -260,36 +250,6 @@ const RegisterSchema=Yup.object().shape({
         <Form>
           <Item><Typography sx={{fontSize:'.85rem',color:'#707a8a',borderBottom: '1px solid #eaecef',pb: '5px',px:1,textAlign:{xs:'left',sm:'center'}}}>Account Information</Typography></Item>
           <Grid container sx={{justifyContent:'space-between',mb:'24px'}}>
-            <Grid sm={6} xs={12} item sx={{mb:'40px'}}>
-              <Item>
-              <InputLabel sx={{lineHeight: '30px'}} htmlFor='email'>Email</InputLabel>
-              <MyTextInput
-               type='email'
-               name='email'
-               label='Email'
-               id='email'
-              />
-              </Item>
-            </Grid>
-            <Grid sm={6} xs={12} item  sx={{mb:'40px',display:'flex', flexDirection:'column'}}>
-            <Item>
-              <InputLabel sx={{lineHeight: '30px'}} htmlFor='number'>phone number</InputLabel>
-              <Grid container sx={{mb:'2rem',display:'flex', flexDirection:'row',alignItems:'start',justifyContent:'space-between'}}>
-                <Grid sm={3} xs={2} sx={{display:'flex',flexDirection:'row',alignItems:'start',mt:'.3rem'}}>
-                  <img src={turkFlag} style={{width: '24px',height:'24px',marginRight: '5px'}} alt='turk-flag'></img>
-                  <Typography sx={{marginRight: '5px',color:'black'}}>+90 </Typography>
-                </Grid>
-                <Grid sm={9} xs={10}>
-                  <MyTextInput
-                   type='tel'
-                   name='number'
-                   label='phone number'
-                  id='number'
-                  />
-                </Grid>
-               </Grid>
-              </Item>
-            </Grid>
             <Grid sm={6} xs={12} item sx={{mb:'40px'}}>
               <Item>
               <InputLabel sx={{lineHeight: '30px'}} htmlFor='password'>password</InputLabel>    

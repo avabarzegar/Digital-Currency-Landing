@@ -50,7 +50,13 @@ export default function LabTabs() {
           .min(8, 'Must be 8 characters at least')
           .max(16, 'Must be 16 characters or less')
           .matches('^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]$')
-          .required('Must be at least 8 characters and contain at least one uppercase, one lowercase letter and one number.')
+          .required('Must be at least 8 characters and contain at least one uppercase, one lowercase letter and one number.'),
+        number: yup.string()
+          .required('Please enter a valid number.')
+          .matches(
+          /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+          'Please enter a valid number'
+        )
         
       });
     
@@ -80,8 +86,8 @@ export default function LabTabs() {
   return (
     <Box sx={{bgcolor:'#fafafa', width: '100%', typography: 'body1' }}>
       <Box className='register-first-container' sx={{pt:5,mx:'auto',width: '400px',display:'flex',alignItems:'start',flexDirection:'column'}}>
-          <Typography sx={{mb:'3rem',fontSize:'1.5rem'}}>{t('register-create-account')}</Typography>
-          <Typography sx={{color:'#848e9c',fontSize:'.88rem'}}>{t('register-create-account-txt')}</Typography>
+          <Typography sx={{mb:'.5rem',fontSize:'1.5rem',fontWeight:'600'}}>{t('register-create-account')}</Typography>
+          <Typography sx={{mb:'2rem',color:'#848e9c',fontSize:'.88rem'}}>{t('register-create-account-txt')}</Typography>
         <TabContext value={value}>
         <Box>
           <Tabs
@@ -100,6 +106,56 @@ export default function LabTabs() {
           </Tabs>
         </Box>
         <TabPanel sx={{pl:0}} value="1">
+        <Formik
+        initialValues={{
+          phone: '',
+          password: '',
+        }}
+        validationSchema={validationSchema}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+          console.log(values);
+        }}
+      >
+
+      <form>
+        <FormControl fullWidth variant="standard">
+        <MyTextInput
+          type='tel'                    
+          name='number'
+          label='phone number'
+          id='number'
+        />
+        </FormControl>
+        <FormControl fullWidth sx={{ my: '3rem'}} variant="standard">
+        <MyTextInput 
+          label="password"
+          name="password"
+          type={values.showPassword ? 'text' : 'password'}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {values.showPassword ? <Visibility sx={{fontSize:'.95rem',color:'#9c9c9c'}} /> : <VisibilityOff sx={{fontSize:'.95rem',color:'#9c9c9c'}} />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+        </FormControl>
+        <Button component={Link} to='/RegisterSecond' className='sign-btn' variant="contained" fullWidth type="submit">
+         {t('register-create-account')}
+        </Button>
+        
+      </form>
+        </Formik>
+        </TabPanel>
+        <TabPanel sx={{pl:0}} value="2">
         <Formik
         initialValues={{
           email: '',
@@ -142,14 +198,13 @@ export default function LabTabs() {
           }
         />
         </FormControl>
-        <Button className='sign-btn' variant="contained" fullWidth type="submit">
+        <Button component={Link} to='/RegisterSecond' className='sign-btn' variant="contained" fullWidth type="submit">
          {t('register-create-account')}
         </Button>
         
       </form>
-      </Formik>
+        </Formik>
         </TabPanel>
-        <TabPanel sx={{pl:0}} value="2">Item Two</TabPanel>
         
       </TabContext>
       </Box>

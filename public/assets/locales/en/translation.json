@@ -30,7 +30,9 @@
     "register-create-account":"Create Account",
     "register-create-account-txt":"Register with your email or mobile",
     "email-name":"Email",
-    "phone-name":"Phone Number"
+    "phone-name":"Phone Number",
+    "register-resend-code":"Resend Code",
+    "resend-code-in":"Resend Code in"
 
 
 }
