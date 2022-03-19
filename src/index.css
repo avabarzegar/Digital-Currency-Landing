@@ -737,12 +737,12 @@ footer p {
   background-color: #fff;
   box-shadow: 0 0 30px 0 rgb(196 202 214 / 29%);
   border-radius: 6px;
-  padding: 48px 18px;
+  padding: 48px 20px;
   overflow: hidden;
 
 }
 .tab-container{
-  width: 300px !important;
+    width: 100%;
 }
 /* .register-first-container .MuiInput-underline:after {
   border: 1px solid var(--yellow-color) !important;
@@ -826,7 +826,10 @@ footer p {
   .registerInputWidth {
     width: 100% !important;
   }
-
+  .tab-container{
+    
+      width: 80% !important;
+  }
   /* /register  */
 
 }

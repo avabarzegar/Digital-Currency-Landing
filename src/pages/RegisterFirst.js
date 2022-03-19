@@ -112,13 +112,13 @@ export default function LabTabs() {
 
 
   return (
-    <Box sx={{bgcolor:'#fafafa', width: '100%', typography: 'body1', paddingBottom: '7rem',paddingTop: '4rem' }}>
-      <Box className='register-first-container' sx={{pt:5,mx:'auto',width: '400px',display:'flex',alignItems:' center',flexDirection:'column'}}>
-          <Typography sx={{mb:'.5rem',fontSize:'1.5rem',fontWeight:'600',textAlign:'start'}}>{t('register-create-account')}</Typography>
-          <Typography sx={{mb:'3rem',color:'#848e9c',fontSize:'.88rem',textAligAlign:'start'}}>{t('register-create-account-txt')}</Typography>
+    <Box sx={{bgcolor:'#fafafa'}}>
+      <Box sx={{pt:5,mx:'auto',width:{xs:'100%',sm:'50%',lg:'30%'},display:'flex',alignItems:'center',flexDirection:'column'}}>
         
-      
-        <TabsUnstyled className='tab-container' defaultValue={0}>
+      <Box className='form-container'>
+        <Typography sx={{mb:'.5rem',fontSize:'1.5rem',fontWeight:'600',textAlign:'start'}}>{t('register-create-account')}</Typography>
+        <Typography sx={{mb:'3rem',color:'#848e9c',fontSize:'.88rem',textAligAlign:'start'}}>{t('register-create-account-txt')}</Typography>
+        <TabsUnstyled defaultValue={0}>
             <TabsList>
               <Tab sx={{pl:0,m:0}}>{t('email-name')}</Tab>
               <Tab sx={{pl:0,m:0}}>{t('phone-name')}</Tab>
@@ -144,9 +144,9 @@ export default function LabTabs() {
           fullWidth
           type="email"   
           name="email"
+          label="Email"
         />
         
-       
         <Button component={Link} to='/RegisterSecond' sx={{mt:'2rem'}} className='sign-btn' variant="contained" fullWidth type="submit">
          {t('register-create-account')}
         </Button>
@@ -174,14 +174,15 @@ export default function LabTabs() {
       <Form>
       <InputLabel fullWidth sx={{lineHeight: '30px'}} htmlFor='confirm'>Phone Number</InputLabel>
         <MyTextInput
-        fullWidth
           type='tel'                    
           name='number'
+          label='phone number'
           id='number'
         />
         
+        
         <Button component={Link} to='/RegisterSecond' sx={{mt:'2rem'}} className='sign-btn' variant="contained" fullWidth type="submit">
-         {t('register-create-account')}
+        {t('register-create-account')}
         </Button>
         
       </Form>
@@ -191,6 +192,8 @@ export default function LabTabs() {
         </TabsUnstyled>
       
       </Box>
+      </Box>
+     
     </Box>
   );
 }

@@ -135,7 +135,7 @@ const SignIn = () => {
 
   return (
     <Box sx={{bgcolor:'#fafafa'}}>
-      <Box sx={{pt:5,mx:'auto',width: '384px',display:'flex',alignItems:'center',flexDirection:'column'}}>
+      <Box sx={{pt:5,mx:'auto',width:{xs:'100%',sm:'50%',lg:'30%'},display:'flex',alignItems:'center',flexDirection:'column'}}>
         <Box sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
           <Typography sx={{mb:'3rem',fontSize:'1.5rem'}}>Sign in</Typography>
           <Typography sx={{color:'#848e9c',fontSize:'.88rem'}}>
@@ -197,7 +197,7 @@ const SignIn = () => {
         />
         
         <Button component={Link} to='/RegisterSecond' sx={{mt:'2rem'}} className='sign-btn' variant="contained" fullWidth type="submit">
-         {t('register-create-account')}
+         Sign In
         </Button>
         
       </Form>
@@ -249,7 +249,7 @@ const SignIn = () => {
         />
         
         <Button component={Link} to='/RegisterSecond' sx={{mt:'2rem'}} className='sign-btn' variant="contained" fullWidth type="submit">
-         {t('register-create-account')}
+         Sign In
         </Button>
         
       </Form>
