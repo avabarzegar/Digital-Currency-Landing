@@ -22,6 +22,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import LanguageIcon from '@mui/icons-material/Language';
 import { Box } from '@mui/material';
+import { t } from 'i18next';
 
 
 
@@ -61,7 +62,7 @@ export default function Footer(){
                     <Grid container xs={12} md={5}>  
                           <Grid xs={12}>
                               <Typography>
-                              Binance TR Office address
+                              Pouyam Office address
                               <br/>
                               BN TEKNOLOJİ A.Ş.
                               <br/>
@@ -75,7 +76,7 @@ export default function Footer(){
                             <br/>
                             Email
                             <br/>
-                            destek@trbinance.com
+                            destek@pouyam.com
                             <br/>
                             <br/>
                             </Typography>
@@ -93,44 +94,35 @@ export default function Footer(){
                       <Grid xs={12} sm={4}>
                         <List>
                           <ListItem>
-                            <ListItemText className='first-footer-item' primary='About' />
+                            <ListItemText className='first-footer-item' primary={t('footer-about')} />
                           </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Fees' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText primary={t('footer-about-about')} />
                           </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Terms' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText primary={t('footer-about-contact')} />
                           </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Privacy' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText primary={t('footer-about-faq')} />
                           </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Risk' />
-                          </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Confidentiality' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText primary={t('footer-about-privacy')} />
                           </ListItem>
                         </List>
                       </Grid>
                       <Grid xs={12} sm={4}>
                         <List>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText className='first-footer-item' primary='Support' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText className='first-footer-item' primary={t('footer-features')} />
                           </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='FAQ' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText primary={t('footer-feature-coins')} />
                           </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Announcements' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText primary={t('footer-features-blogs')} />
                           </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Binance TR Guidelines' />
-                          </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='Support Center' />
-                          </ListItem>
-                          <ListItem component={Link} to='#'>
-                            <ListItemText primary='API Documentation' />
+                          <ListItem component={Link} to=''>
+                            <ListItemText primary={t('footer-features-shop')} />
                           </ListItem>
                         </List>
                       </Grid>
@@ -188,7 +180,7 @@ export default function Footer(){
                                   placement === 'left top',
                               }}
                             >
-                              <Paper>
+                              <Paper sx={{bgcolor:'#373737'}}>
                                 <ClickAwayListener
                                  onKeyDown={handleClose}
                                  
@@ -198,10 +190,10 @@ export default function Footer(){
                                     id="composition-menu"
                                     aria-labelledby="composition-button"
                                     onKeyDown={handleListKeyDown}
-                                    sx={{display:'flex',flexDirection:'row',bgcolor:'#1e2126'}}
+                                    sx={{display:'flex',flexDirection:'row',bgcolor:'1e2126'}}
                                   >
-                                    <MenuItem component={Link} to='#' className='lan-menu-item' onClick={handleClose}>English</MenuItem>
-                                    <MenuItem component={Link} to='#' className='lan-menu-item' onClick={handleClose}>Türkçe</MenuItem>
+                                    <MenuItem component={Link} to='' className='lan-menu-item' onClick={handleClose}>English</MenuItem>
+                                    <MenuItem component={Link} to='' className='lan-menu-item' onClick={handleClose}>Türkçe</MenuItem>
                                   </MenuList>
                                 </ClickAwayListener>
                               </Paper>
@@ -220,7 +212,7 @@ export default function Footer(){
             </footer>
             <Box className='footer-copyRight'>
                 <Typography>
-                    Copyright © 2022 https://www.trbinance.com All rights reserved.
+                    Copyright © 2022 https://www.pouyam.com All rights reserved.
                 </Typography>
             </Box>
             </>

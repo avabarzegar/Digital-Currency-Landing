@@ -17,6 +17,11 @@ body {
 
 }
 
+htm,
+body {
+  overflow-x: hidden;
+}
+
 * {
   font-family: BinancePlex-Regular, Arial, PingFangSC-Regular, "Microsoft YaHei", sans-serif !important;
 }
@@ -120,6 +125,19 @@ nav a:hover {
   background-color: var(--color-white) !important;
 }
 
+.news-box-container {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  width: 1440px;
+}
+
+.news-box-parent {
+  overflow-x: auto;
+}
+
+
 /* /home-pics */
 /* home-carousel */
 .swiper-container-vertical>.swiper-wrapper {
@@ -178,11 +196,14 @@ nav a:hover {
 /* /home-carousel */
 
 /* table-price */
+
 .css-1ygcj2i-MuiTableCell-root {
   color: #848e9c !important;
   font-size: .9 !important;
 }
-
+.home-table{
+  overflow-x: unset !important;
+}
 .MuiBox-root-2 .MuiTypography-body {
   font-size: 1.2rem !important;
 
@@ -259,12 +280,18 @@ nav a:hover {
 
 }
 
-.google-palay-btn {
+.application-btn {
   display: flex;
-  flex-direction: row;
-text-align: start;
- align-items: center;
-  padding: 15px 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  align-items: center;
+  padding: 1rem;
+  color: #000 !important;
+
+}
+.application-btn:hover p{
+  color:var(--yellow-color) !important;
 }
 
 /* /app-section */
@@ -509,27 +536,20 @@ footer p {
 
 .MuiInput-underline:hover:not(.Mui-disabled):before,
 .MuiInput-underline:before {
-  border-bottom: 1px solid #e6e6e6 !important;
+  border-bottom: none !important;
 }
 
 .MuiFormLabel-root {
   font-size: .9rem !important;
-  color: #9c9c9c !important;
+  color: #414040 !important;
   font-weight: 500 !important;
 }
 
-.MuiFormLabel-root.Mui-focused {
-  color: var(--yellow-color) !important;
-  font-size: 1rem !important;
-}
 
 .MuiInputLabel-shrink {
   transform: scale(.9) !important;
 }
 
-.MuiInput-underline:after {
-  border-bottom: 1px solid var(--yellow-color) !important;
-}
 
 /* /sign-in */
 /* register */
@@ -558,22 +578,18 @@ footer p {
 .MuiInput-underline:hover:not(.Mui-disabled):before {
   border-bottom: 0px !important;
 } */
-.register-container .MuiInput-underline:after,
-.register-container .MuiInput-underline:before,
-.register-container .MuiInput-underline:hover:not(.Mui-disabled)::before {
-  border-bottom: 0px solid transparent !important;
-}
 
 .css-1x51dt5-MuiInputBase-input-MuiInput-input {
   padding: 6px 0 6px !important;
 }
 
 .register-input {
-  border: none !important;
   outline: none;
-  background-color: #f5f5f5 !important;
+  border: 1px solid #bfbfbf !important;
   padding: 0 8px;
   margin-bottom: .5rem;
+  max-width: unset !important;
+  width: 100% !important;
 }
 
 .RedInput {
@@ -603,7 +619,7 @@ footer p {
 
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
   border-radius: 0 !important;
-  border: none !important;
+  
 }
 
 .css-qvfsa8-MuiGrid-root,
@@ -643,7 +659,9 @@ footer p {
   font-size: .85rem !important;
   font-weight: 500 !important;
 }
-
+.MuiInput-underline:after{
+  border-bottom: unset !important;
+}
 /* /register */
 
 /* register-second-section  */
@@ -715,7 +733,9 @@ footer p {
   overflow: hidden;
 
 }
-
+.tab-container{
+  width: 300px !important;
+}
 /* .register-first-container .MuiInput-underline:after {
   border: 1px solid var(--yellow-color) !important;
 }  */

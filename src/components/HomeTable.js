@@ -24,7 +24,7 @@ function createData(name, lastPrice, changes, markets) {
 function BTCLogo(){
     return(
         <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-            <Box sx={{width:'15%',mr:2}}>
+            <Box sx={{width:'15%',minWidth:'22px',minHeight:'22px',mr:2}}>
                <img src={BTC} alt='BTC' width='100%'></img>
             </Box>
             <Typography style={{marginRight:10}}>BTC</Typography>
@@ -36,7 +36,7 @@ function BTCLogo(){
 function ETHLogo(){
     return(
         <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-            <Box sx={{width:'15%',mr:2}}>
+            <Box sx={{width:'15%',minWidth:'22px',minHeight:'22px',mr:2}}>
                <img src={ETH} alt='ETH' width='100%'></img>
             </Box>
             <Typography style={{marginRight:10}}>ETH</Typography>
@@ -48,7 +48,7 @@ function ETHLogo(){
 function BNBLogo(){
     return(
         <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-            <Box sx={{width:'15%',mr:2}}>
+            <Box sx={{width:'15%',minWidth:'22px',minHeight:'22px',mr:2}}>
                <img src={BNB} alt='BNB' width='100%'></img>
             </Box>
             <Typography style={{marginRight:10}}>BNB</Typography>
@@ -60,7 +60,7 @@ function BNBLogo(){
 function USDTLogo(){
     return(
         <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-            <Box sx={{width:'15%',mr:2}}>
+            <Box sx={{width:'15%',minWidth:'22px',minHeight:'22px',mr:2}}>
                <img src={USDT} alt='USDT' width='100%'></img>
             </Box>
             <Typography style={{marginRight:10}}>USDT</Typography>
@@ -72,35 +72,35 @@ function USDTLogo(){
 
 const rows = [
   createData(<BTCLogo />,
-  <Typography className='last-price' >€ 552,117</Typography>, 
+  <Typography className='last-price' >$ 552,117</Typography>, 
   <Typography className='fall-loss'>1.29%</Typography>,
-  <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
-  <img src={currencyChart} alt='chart1'></img>
-  </div> ),
+  <Box sx={{display:{xs:'none',sm:'flex'}}}>
+  <img src={currencyChart}  alt='chart1'></img>
+  </Box> ),
   createData(<ETHLogo />,
-  <Typography className='last-price' >€ 39,084</Typography>, 
+  <Typography className='last-price' >$ 39,084</Typography>, 
   <Typography className='rise-gain'>1.09%</Typography>,
-  <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
-  <img src={currencyChart} alt='chart2'></img>
-  </div> ),
+  <Box sx={{display:{xs:'none',sm:'flex'}}}>
+  <img src={currencyChart}  alt='chart2'></img>
+  </Box> ),
   createData(<BNBLogo />,
-  <Typography className='last-price' >€ 5,269</Typography>,
+  <Typography className='last-price' >$ 5,269</Typography>,
    <Typography className='rise-gain'>0.80%</Typography>,
-   <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
-   <img src={currencyChart} alt='chart3'></img>
-   </div> ),
+   <Box sx={{display:{xs:'none',sm:'flex'}}}>
+   <img src={currencyChart}  alt='chart3'></img>
+   </Box> ),
   createData(<USDTLogo />,
-  <Typography className='last-price' >€ 13.92</Typography>,
+  <Typography className='last-price' >$ 13.92</Typography>,
    <Typography className='fall-loss'>1.13%</Typography>,
-   <div sx={{width:'100px',display:{xs:'none',sm:'flex'}}}>
-   <img src={currencyChart} alt='chart4'></img>
-   </div> ),
+   <Box sx={{display:{xs:'none',sm:'flex'}}}>
+   <img src={currencyChart}  alt='chart4'></img>
+   </Box> ),
 ];
 
 export default function PriceTable() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table className='home-table' aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>

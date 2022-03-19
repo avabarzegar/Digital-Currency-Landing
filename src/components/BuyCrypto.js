@@ -27,7 +27,7 @@ export default function BuyCrypto(){
               <img src={global} alt='cryptoPic' width='100%'></img>
             </Box>
             <Typography sx={{fontSize:'1.1rem',mb:2}}>Step 1</Typography>
-            <Typography sx={{fontSize:'1rem',mb:7}}>Sign up for binance</Typography>
+            <Typography sx={{fontSize:'1rem',mb:7}}>Sign up for pouyam</Typography>
           </Grid>
           <Grid item component={Link} to='#' md={3} sm={6} xs={12} className='crypto-grid-container'>
             <Box className='crypto-img-container'>

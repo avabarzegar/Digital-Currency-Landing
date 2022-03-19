@@ -14,10 +14,78 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import MiniLogo from '../pictures/minilogo.svg';
 import { Link } from 'react-router-dom';
+import { styled } from '@mui/system';
+import TabsUnstyled from '@mui/base/TabsUnstyled';
+import TabsListUnstyled from '@mui/base/TabsListUnstyled';
+import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
+import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+import { useTranslation } from 'react-i18next';
+import { Form } from 'formik';
+
+
+const gray = {
+  200: '#f5f5f5',
+  300:'#707a8a'
+ 
+};
+
+const Tab = styled(TabUnstyled)`
+  color: ${gray[300]};
+  font-weight: 500;
+  font-size: 1rem;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  padding: 12px 16px;
+  margin: 6px 6px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+
+  &:hover {
+    background-color: ${gray[200]};
+  }
+
+  &:focus {
+    color: black;
+    background-color: ${gray[200]};
+    outline-offset: 2px;
+    
+  }
+
+  &.${tabUnstyledClasses.selected} {
+    color: black;
+    background-color:${gray[200]};
+  }
+
+  &.${buttonUnstyledClasses.disabled} {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+`;
+
+const TabPanel = styled(TabPanelUnstyled)`
+  width: 100%;
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+`;
+
+const TabsList = styled(TabsListUnstyled)`
+  
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
+`;
+
 
 
 const SignIn = () => {
 
+  const {t}=useTranslation();
   const [values, setValues] = React.useState({
     password: '',
     showPassword: false,
@@ -55,13 +123,12 @@ const SignIn = () => {
   const MyTextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
-      <>
-        <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>
-        <Input className="text-input" {...field} {...props} />
+      <Box sx={{display:'flex',flexDirection:'column'}}>
+        <Input className={meta.touched && meta.error ? 'RedInput' :'register-input'} {...field} {...props} />
         {meta.touched && meta.error ? (
           <div className="error">{meta.error}</div>
         ) : null}
-      </>
+      </Box>
     );
   };
  
@@ -76,16 +143,17 @@ const SignIn = () => {
           </Typography>
           <Box sx={{width:'60%',m:' 16px auto 40px',p: '8px 25px 8px 10px',border:'1px solid #f5f5f5',borderRadius: '23px',display:'flex',flexDirection:'row',alignItems:'center'}}>
             <img src={lock} width={10} height={16} alt='lock'></img>
-            <Typography sx={{fontSize:14,ml:1}}>https://www.trbinance.com</Typography>
+            <Typography sx={{fontSize:14,ml:1}}>https://www.pouyam.com</Typography>
           </Box>
         </Box>
       <Box className='form-container'>
-        <Typography sx={{color:'#848e9c',fontSize:'.88rem',mb:'1rem'}}>Log in with Binance.com account:</Typography>
-        <a style={{textAlign:'center',width:'90%',margin:'8px auto 30px',padding: '10px 14px',border:'1.5px solid #f0b90b',borderRadius: '4px',display:'flex',flexDirection:'row',justifyContent:'center'}}>
-            <img src={MiniLogo} style={{marginRight:'5px'}}  alt='MiniLogo'></img>
-            <Typography>Log in with Binance.com</Typography>
-        </a>
-        <Typography sx={{color:'#848e9c',fontSize:'.88rem',mb:'3rem'}}>Log in with Binance TR account:</Typography>
+        <Typography sx={{color:'#848e9c',fontSize:'.88rem',mb:'3rem'}}>Log in with Pouyam account:</Typography>
+        <TabsUnstyled defaultValue={0}>
+            <TabsList>
+              <Tab sx={{pl:0,m:0}}>{t('email-name')}</Tab>
+              <Tab sx={{pl:0,m:0}}>{t('phone-name')}</Tab>
+            </TabsList>
+        <TabPanel sx={{pl:0}} value={0}>
         <Formik
         initialValues={{
           email: '',
@@ -101,16 +169,16 @@ const SignIn = () => {
         }}
       >
 
-      <form>
-      <FormControl fullWidth variant="standard">
+      <Form>
+      <InputLabel fullWidth sx={{lineHeight: '30px'}} htmlFor='password'>Email</InputLabel>    
         <MyTextInput
           fullWidth
           type="email"   
           name="email"
           label="Email"
         />
-        </FormControl>
-        <FormControl fullWidth sx={{ my: '3rem'}} variant="standard">
+        
+        <InputLabel fullWidth sx={{lineHeight: '30px'}} htmlFor='password'>Password</InputLabel>    
         <MyTextInput 
           label="password"
           name="password"
@@ -127,16 +195,69 @@ const SignIn = () => {
             </InputAdornment>
           }
         />
-        </FormControl>
-        <Button className='sign-btn' variant="contained" fullWidth type="submit">
-          Sign in
+        
+        <Button component={Link} to='/RegisterSecond' sx={{mt:'2rem'}} className='sign-btn' variant="contained" fullWidth type="submit">
+         {t('register-create-account')}
         </Button>
-        <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-between',mt:'2rem'}}>
-          <Link to='/ForgetPassword'><Typography sx={{color:'#F1B80A',fontWeight:500,fontSize:'.85rem'}}>Forgot password?</Typography></Link>
-          <Link to='/RegisterThird'><Typography sx={{color:'#F1B80A',fontWeight:500,fontSize:'.85rem'}}>Register</Typography></Link>
-        </Box>
-      </form>
-      </Formik>
+        
+      </Form>
+        </Formik>
+        </TabPanel>
+        
+      
+        <TabPanel sx={{pl:0}} value={1}>
+        <Formik
+        initialValues={{
+          phone: '',
+          password: '',
+        }}
+        validationSchema={validationSchema}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+          console.log(values);
+        }}
+      >
+
+      <Form>
+      <InputLabel fullWidth sx={{lineHeight: '30px'}} htmlFor='confirm'>Phone Number</InputLabel>
+        <MyTextInput
+          type='tel'                    
+          name='number'
+          label='phone number'
+          id='number'
+        />
+        
+        <InputLabel fullWidth sx={{lineHeight: '30px'}} htmlFor='password'>Password</InputLabel>    
+        <MyTextInput 
+          label="password"
+          name="password"
+          type={values.showPassword ? 'text' : 'password'}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {values.showPassword ? <Visibility sx={{fontSize:'.95rem',color:'#9c9c9c'}} /> : <VisibilityOff sx={{fontSize:'.95rem',color:'#9c9c9c'}} />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+        
+        <Button component={Link} to='/RegisterSecond' sx={{mt:'2rem'}} className='sign-btn' variant="contained" fullWidth type="submit">
+         {t('register-create-account')}
+        </Button>
+        
+      </Form>
+        </Formik>
+        </TabPanel>
+        
+        </TabsUnstyled>
+      
       </Box>
       </Box>
      

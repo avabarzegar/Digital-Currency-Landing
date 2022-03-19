@@ -3,7 +3,7 @@
     "home-header-topic":"buy and sell digital currencies in pouyam exchange",
     "home-header-sub-topic":"all listed currencies in Bainance",
     "home-header-button":"start buying and selling",
-    "slide-one":"Trade with Binance, Don't Pay Transfer Fees",
+    "slide-one":"Trade with Pouyam, Don't Pay Transfer Fees",
     "time-slide-one":"17/06",
     "slide-two":"0 Fee Turkish Lira Withdrawal Campaign Extended Again!",
     "time-slide-two":"17/01",
@@ -41,7 +41,21 @@
     "application-benefit-two":"in pouyam application you have access to all exchange facilities",
     "application-benefit-title-three":"View Availability Faster and Trade",
     "application-benefit-three":"buy ans sell with the app from anywhere and any time!",
-    "application-google-play":"Download from Google Play"
+    "application-google-play":"Google Play",
+    "trade-now-txt":"Deposit Turkish Lira by bank transfer. Buy Bitcoin, Ethereum, Ripple and other cryptocurrencies easily.",
+    "application-app-store":"App Store",
+    "application-android":"Android APK",
+
+
+    "footer-about":"About Pouyam",
+    "footer-about-about":"About Us",
+    "footer-about-contact":"Contact us",
+    "footer-about-faq":"Faq",
+    "footer-about-privacy":"Privacy and terms",
+    "footer-features":"Site Features",
+    "footer-feature-coins":"Coins",
+    "footer-features-blogs":"Blog",
+    "footer-features-shop":"Shop"
 
 
 }

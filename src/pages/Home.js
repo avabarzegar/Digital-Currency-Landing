@@ -34,8 +34,10 @@ import { t } from 'i18next';
 import appwallet from '../pictures/appwallet.png';
 import phone from '../pictures/phone.png';
 import googleplay from '../pictures/googleplay.png';
+import AppleIcon from '@mui/icons-material/Apple';
+import AndroidIcon from '@mui/icons-material/Android';
 
-// import { ThemeContext } from '../context/Theme';
+import { ThemeContext } from '../context/Theme';
 // import { makeStyles } from '@material-ui/styles';
 
 
@@ -101,12 +103,6 @@ class Slider extends React.Component {
 
 const Home = () => {
 
-  // const {
-  //   Direction,
-  //   setDirection,
-  //   Mode,
-  //   setMode
-  // } = useContext(ThemeContext);
 
   // const theme = useTheme();
   // const isMd = useMediaQuery(theme.breakpoints.down('md'));
@@ -130,13 +126,16 @@ const { t } = useTranslation();
         <Container>
         <Grid container sx={{display:'flex',justifyContent:'start',alignItems:'center'}}>
           
-          <Grid xs={12} md={6} sx={{display:'flex',justifyContent:'start',flexDirection:'column',alignItems:{xs:'center',md:'start'}}}>
-            <Typography sx={{fontSize:'2.5rem',fontWeight:'700',color:'white',mb:'2rem',mt:{xs:'2rem',md:'0'},textAlign:{xs:'center',md:'start'}}}>{t('home-header-topic')}</Typography>
-            <Typography sx={{fontSize:'1.2rem',color:'white',mb:'2rem'}}>{t('home-header-sub-topic')}</Typography>
+          <Grid xs={12} md={6} sx={{display:'flex',justifyContent:'start',
+             flexDirection:'column',alignItems:{xs:'center',md:'start'}}}>
+            <Typography sx={{fontSize:{xs:'2rem',md:'2.5rem'},fontWeight:'700',color:'white',mb:'2rem',
+             mt:{xs:'2rem',md:'0'},textAlign:{xs:'center',md:'start'}}}>{t('home-header-topic')}</Typography>
+            <Typography sx={{fontSize:'1.2rem',color:'white',
+             textAlign:{xs:'center',md:'start'},mb:'2rem'}}>{t('home-header-sub-topic')}</Typography>
             <Link to='SignIn'className='filled-btn'>{t('home-header-button')}</Link>
           </Grid>
-          <Grid xs={12} md={6}>
-            <img src={HomeBg} alt='homeBg' width='100%' height='auto'></img>
+          <Grid xs={12} md={6} sx={{display:'flex',justifyContent:'center'}}>
+            <img src={HomeBg} alt='homeBg' width='100%' height='auto' style={{maxWidth:'500px',maxHeight:'530px'}}></img>
           </Grid>
 
        </Grid>
@@ -156,7 +155,7 @@ const { t } = useTranslation();
         <Grid container sx={{py:3,alignItems:'start' ,px:1}}>
           <Grid item xs={8}>
             <Typography sx={{color:'black',fontSize:'.9rem'}}>
-            Banka transferi ile Türk Lirası yatır. Bitcoin, Ethereum, Ripple ve diğer kriptoparaları kolayca satın al.
+              {t('trade-now-txt')}
             </Typography> 
           </Grid>
           <Grid item xs={4} sx={{textAlign:'end'}}>
@@ -167,72 +166,74 @@ const { t } = useTranslation();
             </LinkMui>
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid item md={3} sm={6} xs={12}>
+        <Box className='news-box-parent'>
+        <Box className='news-box-container'>
+          <Box>
             <Item>
-            <img src={homeImgOne} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+            <img src={homeImgOne} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
             </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgTwo} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgTwo} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgThree} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgThree} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgFour} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgFour} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-        </Grid>
-        <Grid container>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+        
+        
+          <Box>
             <Item>
-            <img src={homeImgOne} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+            <img src={homeImgOne} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
             </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgTwo} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgTwo} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgThree} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgThree} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgFour} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgFour} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-        </Grid>
-        <Grid container>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+        
+        
+          <Box>
             <Item>
-            <img src={homeImgOne} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+            <img src={homeImgOne} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
             </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgTwo} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgTwo} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgThree} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgThree} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-          <Grid item md={3} sm={6} xs={12}>
+          </Box>
+          <Box>
           <Item>
-           <img src={homeImgFour} width='100%' style={{borderRadius:'4px'}} alt='homeimg1'></img>
+           <img src={homeImgFour} width='282px' height='133px' style={{borderRadius:'4px'}} alt='homeimg1'></img>
            </Item>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
+        </Box>
         {/* slider  */}
         <Box sx={{display:'flex',flexDirection:'row',justifyContent:'center',my:4,px:1}}>
           <Box width='30px' height='30px'>
@@ -258,17 +259,31 @@ const { t } = useTranslation();
       <Box sx={{bgcolor:'white',py:'5rem'}}>
         <Container>
             <Grid container> 
-            <Grid xs={12} md={5} sx={{display:'flex',justifyContent:'center',flexDirection:'column',mb:'4rem',alignItems:{xs:'center',md:'start'}}}>
+            <Grid xs={12} md={5} sx={{display:'flex',justifyContent:'center',flexDirection:'column',mb:'4rem',textAlign:{xs:'center',md:'start'}}}>
               <Typography sx={{fontSize:'40px',fontWeight:'600',lineHeight:'48px'}}>
                 {t('pouyam-application')}
               </Typography>
               <Typography sx={{color:'#474D57',fontSize:'20px',lineHeight:'30px',mt:'10px',mb:'3.5rem',textAlign:{xs:'center',md:'start'}}}>{t('pouyam-application-txt')}</Typography>
-              <a href='' className='google-palay-btn filled-btn'>
-                <Typography sx={{fontSize:'.8rem',fontWeight:'500',px:'5px'}}>{t('application-google-play')}</Typography>
+              <Box sx={{display:'flex',flexDirection:'row',justifyContent:'center',textAlign:'center'}}>
+              <a href='' className='application-btn'>
                 <span> 
                   <img src={googleplay} style={{px:'5px'}} alt='googleplay' width={23} height={23}></img>
                 </span>
+                <Typography sx={{fontSize:'.8rem',fontWeight:'500',px:'5px'}}>{t('application-google-play')}</Typography>
               </a>
+              <a href='' className='application-btn'>
+                <span> 
+                  <AndroidIcon style={{px:'5px'}} width={23} height={23} />
+                </span>
+                <Typography sx={{fontSize:'.8rem',fontWeight:'500',px:'5px'}}>{t('application-app-store')}</Typography>
+              </a>
+              <a href='' className='application-btn'>
+                <span> 
+                  <AppleIcon style={{px:'5px'}} width={23} height={23} />
+                </span>
+                <Typography sx={{fontSize:'.8rem',fontWeight:'500',px:'5px'}}>{t('application-android')}</Typography>
+              </a>
+              </Box>
             </Grid>
               <Grid container xs={12} md={7} sx={{display:'flex',flexDirection:'row',justifyContent:{sm:'end',xs:'start'}}}>
                 <Grid xs={12} sm={6} sx={{textAlign:'center',mb:'2rem'}}>

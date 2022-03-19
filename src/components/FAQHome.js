@@ -87,7 +87,7 @@ export default function FAQAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          Go to the Wallet Deposit Turkish Lira (TRY) page after you login to your Binance TR account via website or mobile app and then pick the bank you wish to use. You can deposit TRY using the bank account details shown on the page using a bank account that is owned by you.
+          Go to the Wallet Deposit Turkish Lira (TRY) page after you login to your Pouyam account via website or mobile app and then pick the bank you wish to use. You can deposit TRY using the bank account details shown on the page using a bank account that is owned by you.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -107,7 +107,7 @@ export default function FAQAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          For security purposes, you will be subjected to a cryptocurrency transfer limitation for the next 48 hours following your first Turkish Lira deposit. Cryptocurrency transfers and Binance Transfer method are limited by this measure and it cannot be lifted due to security reasons.
+          For security purposes, you will be subjected to a cryptocurrency transfer limitation for the next 48 hours following your first Turkish Lira deposit. Cryptocurrency transfers and pouyam Transfer method are limited by this measure and it cannot be lifted due to security reasons.
           Turkish Lira withdrawals are not affected by this limitation.
           </Typography>
         </AccordionDetails>
@@ -118,7 +118,7 @@ export default function FAQAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          Please note that, in accordance with the security prerequisites imposed by legal regulations, a user may only have one account that is verified with their KYC information. Similarly, KYC information may not be removed from one account or transferred to the other. In this case, we advise using our platform by logging in with the email address with which you completed the Identity Verification. You can find out which email address you completed the Identity Verification first by using the search functionality of your currently used email account and searching for Binance TR.
+          Please note that, in accordance with the security prerequisites imposed by legal regulations, a user may only have one account that is verified with their KYC information. Similarly, KYC information may not be removed from one account or transferred to the other. In this case, we advise using our platform by logging in with the email address with which you completed the Identity Verification. You can find out which email address you completed the Identity Verification first by using the search functionality of your currently used email account and searching for Pouyam.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -130,7 +130,7 @@ export default function FAQAccordions() {
           <Typography>
           EFT transfers that you make between 09.00 - 16.45 (TSİ) using any bank account other than Ziraat Bankası and Vakıfbank will go through on the same day, otherwise, transfers made after the specified time window or on weekends and national holidays will go through the following business day.
           If you made your Turkish Lira withdrawal request during the timeframe and days mentioned above using a personal transactional account, the transaction will be completed within 2 hours.
-          The withdrawal requests shown as “Completed” by the system are sent out by Binance TR.
+          The withdrawal requests shown as “Completed” by the system are sent out by Pouyam.
           If your funds have not been delivered to you yet due to the delays on the banking system, please wait for the transaction to be completed. The bank will go through with the transaction within banking hours.
           </Typography>
         </AccordionDetails>
@@ -153,13 +153,13 @@ export default function FAQAccordions() {
           <Grid item xs={12} md={6}>
           <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
         <AccordionSummary aria-controls="panel7d-content" id="panel7d-header">
-          <Typography>What is Binance Transfer and how to use it?</Typography>
+          <Typography>What is Pouyam Transfer and how to use it?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          By using the Binance Transfer functionality, you can quickly transfer crypto between Binance TR and Binance Global platforms. You can monitor your transfers from the “Transaction History” section of your account later.
-You can connect your Binance Global account from the “Binance Transfer” section of your Binance TR profile and then use this function. (Please make sure you connect the correct account that you wish to transfer with)
-Binance Transfer page: https://www.trbinance.com/en/usercenter/wallet/binance-transfer
+          By using the Pouyam Transfer functionality, you can quickly transfer crypto between Pouyam and Pouyam Global platforms. You can monitor your transfers from the “Transaction History” section of your account later.
+You can connect your Pouyam Global account from the “Pouyam Transfer” section of your Pouyam profile and then use this function. (Please make sure you connect the correct account that you wish to transfer with)
+Pouyam Transfer page: https://www.pouyam.com/en/usercenter/wallet/pouyam-transfer
 
           </Typography>
         </AccordionDetails>
@@ -170,7 +170,7 @@ Binance Transfer page: https://www.trbinance.com/en/usercenter/wallet/binance-tr
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          Identity Verification, also known as KYC (Know Your Customer), is one of the common security standards of the cryptocurrency industry. The reason for KYC obligation is to prevent suspicious transactions from happening. This system closely resembles the anti-money laundering (AML) procedures used by banks. You may think of KYC procedure as a trust building practice between Binance TR and the user.
+          Identity Verification, also known as KYC (Know Your Customer), is one of the common security standards of the cryptocurrency industry. The reason for KYC obligation is to prevent suspicious transactions from happening. This system closely resembles the anti-money laundering (AML) procedures used by banks. You may think of KYC procedure as a trust building practice between Pouyam and the user.
           </Typography>
         </AccordionDetails>
       </Accordion>

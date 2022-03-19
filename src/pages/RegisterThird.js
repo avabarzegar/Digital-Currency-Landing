@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import { Typography } from '@mui/material';
 import { Grid } from '@mui/material';
-import turkFlag from '../pictures/turkflag.png';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import DateSelect from '../components/DateSelect';
@@ -250,7 +249,7 @@ const RegisterSchema=Yup.object().shape({
         <Form>
           <Item><Typography sx={{fontSize:'.85rem',color:'#707a8a',borderBottom: '1px solid #eaecef',pb: '5px',px:1,textAlign:{xs:'left',sm:'center'}}}>Account Information</Typography></Item>
           <Grid container sx={{justifyContent:'space-between',mb:'24px'}}>
-            <Grid sm={6} xs={12} item sx={{mb:'40px'}}>
+            <Grid sm={6} xs={12} item sx={{mb:'1rem'}}>
               <Item>
               <InputLabel sx={{lineHeight: '30px'}} htmlFor='password'>password</InputLabel>    
               <MyTextInput 
@@ -272,7 +271,7 @@ const RegisterSchema=Yup.object().shape({
               />
               </Item>
             </Grid>
-            <Grid sm={6} xs={12} item sx={{mb:'40px'}}>
+            <Grid sm={6} xs={12} item sx={{mb:'1rem'}}>
               <Item>
               <InputLabel sx={{lineHeight: '30px'}} htmlFor='confirm'>confirm password</InputLabel>
               <MyTextInput 
@@ -293,7 +292,7 @@ const RegisterSchema=Yup.object().shape({
               />
               </Item>
             </Grid>
-            <Grid sm={6} xs={12} item sx={{mb:'40px'}}>
+            <Grid sm={6} xs={12} item sx={{mb:'1rem'}}>
               <Item>
               <InputLabel sx={{lineHeight: '30px'}} htmlFor='referral'>Referral ID (Optional)</InputLabel>
               <MyTextInput
@@ -311,7 +310,7 @@ const RegisterSchema=Yup.object().shape({
               </Item>
             </Grid>
             <Grid container>
-              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'1rem'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} htmlFor='firstName'>Name</InputLabel>
                   <MyTextInput
@@ -321,7 +320,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'1rem'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} htmlFor='lastName'>Surname</InputLabel>
                   <MyTextInput
@@ -331,7 +330,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'1rem'}}>
                 <Item>
                   <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} >Date of Birth</InputLabel>
                 </Item>
@@ -339,7 +338,7 @@ const RegisterSchema=Yup.object().shape({
                   <DateSelect />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'1rem'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} >Citizenship</InputLabel>
                   <Select
@@ -351,7 +350,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'1rem'}}>
                 <Item>
                 <InputLabel sx={{textAlign:{xs:'start',sm:'center'},lineHeight: '30px'}} >Nationality</InputLabel>
                   <Select
@@ -363,7 +362,7 @@ const RegisterSchema=Yup.object().shape({
                   />
                 </Item>
               </Grid>
-              <Grid sm={4} xs={12} sx={{mb:'40px'}}>
+              <Grid sm={4} xs={12} sx={{mb:'1rem'}}>
                 <Item>
                 <InputLabel sx={{lineHeight: '30px'}} htmlFor='turkish'>Turkish ID Number</InputLabel>
                 <MyTextInput
@@ -391,7 +390,7 @@ const RegisterSchema=Yup.object().shape({
                <a style={{fontWeight:'500',color:'#F1B80A',fontSize:'.85rem'}}> Explicit Consent Statement</a>
               </Typography>
             </Box>
-            <Typography sx={{fontSize:'.85rem',mt:'1rem',textAlign:'start',pl:'1.55rem'}}>By clicking the [Register] button, You agree the Binance TR
+            <Typography sx={{fontSize:'.85rem',mt:'1rem',textAlign:'start',pl:'1.55rem'}}>By clicking the [Register] button, You agree the Pouyam
                <a style={{fontWeight:'500',color:'#F1B80A',fontSize:'.85rem'}}> User Agreement</a>,
                <a style={{fontWeight:'500',color:'#F1B80A',fontSize:'.85rem'}}> Risk Disclaimer</a>,
                <a style={{fontWeight:'500',color:'#F1B80A',fontSize:'.85rem'}}> Confidentiality</a> and

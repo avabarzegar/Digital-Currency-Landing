@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { useContext }  from 'react';
 import { Routes, Route, Link } from "react-router-dom"
 import logo from '../pictures/logo.png';
 import Typography from '@mui/material/Typography';
@@ -36,6 +36,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import Footer from '../components/Footer';
 import '../context/i18n';
 import { useTranslation } from "react-i18next";
+
 
 
 
@@ -141,7 +142,7 @@ const App = () => {
             </Typography>
             </Link>
           </Grid>
-          <Grid className='MenuContainer' item xs={6} sx={{justifyContent: 'start', display:{xs: 'none' , md: 'flex'} , alignItems: 'center' , flexDirection: 'row'}}>
+          <Grid className='MenuContainer' item xs={6} sx={{justifyContent: 'start', display:{xs: 'none' , xmd: 'flex'} , alignItems: 'center' , flexDirection: 'row'}}>
           <Grid item >
             <Link to="Market" activeClassName="active">
             {t('nav-coins-fundamentals')}
@@ -173,7 +174,7 @@ const App = () => {
             </Link>
           </Grid>
           </Grid>
-          <Grid item xs={4} sx={{justifyContent: 'end', display:{xs: 'none' , md: 'flex'} , alignItems: 'center' , flexDirection: 'row'}}>
+          <Grid item xs={4} sx={{justifyContent: 'end', display:{xs: 'none' , xmd: 'flex'} , alignItems: 'center' , flexDirection: 'row'}}>
             <Link to="SignIn" button variant="text" sx={{mx: 2, color: 'white',textDecoration: 'none'}}>{t('nav-sign-in')}</Link>      
               <Link to="RegisterFirst"> 
               <BootstrapButton variant="contained"  size='small'>
@@ -184,13 +185,13 @@ const App = () => {
           </Grid>
          
         </Grid>
-             <Grid item xs={4} sx={{justifyContent: 'end', display:{xs: 'flex', md: 'none'} , alignItems: 'center' , flexDirection: 'row'}}>
+             <Grid item xs={4} sx={{bgcolor:'#12161c',justifyContent: 'end', display:{xs: 'flex', xmd: 'none'} , alignItems: 'center' , flexDirection: 'row'}}>
           <Link to="RegisterFirst"> 
               <BootstrapButton sx={{display:{xs: 'none',sm:'flex'}}} variant="contained"  size='small'>
               {t('nav-register')}  
               </BootstrapButton>
              </Link>
-            <div sx={{ display: { xs: 'flex', md: 'none' },justifyContent:'end'}}>           
+            <div sx={{ display: { xs: 'flex', xmd: 'none' },justifyContent:'end'}}>           
              
               <div>
       {['right'].map((anchor) => (

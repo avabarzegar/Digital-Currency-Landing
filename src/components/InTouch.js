@@ -21,15 +21,25 @@ export default function InTouch(){
             <Box className='crypto-img-container'>
               <img src={support} alt='cryptoPic' width='100%'></img>
             </Box>
-            <Typography sx={{color:'#212833' ,fontSize:'1.5rem',mb:2,fontWeight:'500'}}>24/7 Support</Typography>
-            <Typography sx={{color:'#48515d' ,fontSize:'14px',lineHeight:'18px',px:'1rem',mb:7}}>Got a problem? Just get in touch. Our support team is available 24/7.</Typography>
+            <Typography sx={{color:'#212833' ,fontSize:'1.5rem',fontWeight:'500'}}>24/7 Support</Typography>
+            <Typography sx={{color:'#48515d' ,fontSize:'14px',fontWeight:'500',lineHeight:'24px',mb:7}}>
+              <ul style={{padding:'0px',display:'flex',justifyContent:'start',flexDirection:'column'}}>
+                <li style={{textAlign:'start'}}>Online Chat</li>
+                <li style={{textAlign:'start'}}>Send Email</li>
+                <li style={{textAlign:'start'}}>Ticket</li>
+              </ul>
+            </Typography>
           </Grid>
           <Grid component={Link} to='Register' item sm={6} xs={12} className='inTouch-grid-container'>
             <Box className='crypto-img-container'>
               <img src={FAQ} alt='cryptoPic' width='100%'></img>
             </Box>
-            <Typography sx={{color:'#212833' ,fontSize:'1.5rem',mb:2,fontWeight:'500'}}>FAQ</Typography>
-            <Typography sx={{color:'#48515d' ,fontSize:'14px',lineHeight:'18px',px:'1rem',mb:7}}>Got a question? We've probably got the answer for you here.</Typography>
+            <Typography sx={{color:'#212833' ,fontSize:'1.5rem',mb:1,fontWeight:'500'}}>FAQ</Typography>
+            <Typography sx={{color:'#48515d' ,fontSize:'14px',fontWeight:'500',lineHeight:'24px',px:'2rem',mb:7}}>Got a question?
+            <br/> We've probably got the answer.
+            <br/>
+            View FAQs for detailed instructions.
+            </Typography>
           </Grid>
         </Grid>
         </Container>

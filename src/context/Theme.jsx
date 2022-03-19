@@ -14,6 +14,17 @@ function Theme(props) {
         palette:{
             mode:Mode
         },
+        breakpoints: {
+            values: {
+              xs: 0,
+              xsm:400,
+              sm: 600,
+              md: 900,
+              xmd:1000,
+              lg: 1200,
+              xl: 1536,
+            },
+        },
         tabs: {
             
             "& .Mui-selected": {
@@ -33,7 +44,8 @@ function Theme(props) {
             Direction,
             setDirection,
             Mode,
-            setMode
+            setMode,
+           
         }}>
             {props.children}
         </ThemeContext.Provider>

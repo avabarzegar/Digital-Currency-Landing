@@ -7,16 +7,13 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Box } from '@mui/system';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
 import Tabs from '@mui/material/Tabs';
-import { ThemeContext } from '../context/Theme';
-import { makeStyles } from '@material-ui/styles';
-import { useTranslation } from 'react-i18next';
+
 import i18next from 'i18next';
 import Cookies from 'js-cookie';
 
@@ -91,7 +88,6 @@ export default function CustomizedDialogs() {
       dir:'rtl'
     }
   ]
-  const {t}=useTranslation();
   
   const CurrentLanguageCode=Cookies.get('i18next') || 'en';
   const CurrentLanguage=Languages.find( l => l.code === CurrentLanguageCode)
