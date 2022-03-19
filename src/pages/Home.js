@@ -152,9 +152,9 @@ const { t } = useTranslation();
       </Button> */}
       <Box sx={{bgcolor:'#fafafa',pb:'3rem'}}>
         <Container>
-        <Grid container sx={{py:3,alignItems:'start' ,px:1}}>
-          <Grid item xs={8}>
-            <Typography sx={{color:'black',fontSize:'.9rem'}}>
+        <Grid container sx={{py:3,alignItems:'start' ,px:1,justifyContent:'space-between'}}>
+          <Grid item xs={7}>
+            <Typography sx={{color:'black',fontSize:'.9rem',}}>
               {t('trade-now-txt')}
             </Typography> 
           </Grid>
@@ -250,6 +250,7 @@ const { t } = useTranslation();
         {/* /slider  */}
         {/* price-table */}
         <Box sx={{px:1}}>
+          <Typography sx={{textAlign:'start',fontSize:'2.2rem',fontWeight:'600',my:'2.5rem'}}>Market trend</Typography>
           <PriceTable />
         </Box>
         </Container>
@@ -260,10 +261,10 @@ const { t } = useTranslation();
         <Container>
             <Grid container> 
             <Grid xs={12} md={5} sx={{display:'flex',justifyContent:'center',flexDirection:'column',mb:'4rem',textAlign:{xs:'center',md:'start'}}}>
-              <Typography sx={{fontSize:'40px',fontWeight:'600',lineHeight:'48px'}}>
+              <Typography sx={{fontSize:'2.2rem',fontWeight:'600',lineHeight:'48px'}}>
                 {t('pouyam-application')}
               </Typography>
-              <Typography sx={{color:'#474D57',fontSize:'20px',lineHeight:'30px',mt:'10px',mb:'3.5rem',textAlign:{xs:'center',md:'start'}}}>{t('pouyam-application-txt')}</Typography>
+              <Typography sx={{color:'#474D57',fontSize:{xs:'1rem',sm:'20px'},lineHeight:'30px',mt:'10px',mb:'3.5rem',textAlign:{xs:'center',md:'start'}}}>{t('pouyam-application-txt')}</Typography>
               <Box sx={{display:'flex',flexDirection:'row',justifyContent:'center',textAlign:'center'}}>
               <a href='' className='application-btn'>
                 <span> 
@@ -295,7 +296,7 @@ const { t } = useTranslation();
                     <img src={appwallet} alt='wallet' width={28} height={28} className='app-wallet-img'></img>
                   </Typography>
                   <Typography sx={{display:'flex',flexDirection:'column'}}>
-                    <Typography sx={{fontWeight:'600',fontSize:'20px'}}>
+                    <Typography sx={{fontWeight:'500',fontSize:'20px'}}>
                      {t('application-benefit-title-one')} 
                     </Typography>
                     <Typography sx={{color:'#707A8A'}}>{t('application-benefit-one')}</Typography>
@@ -306,7 +307,7 @@ const { t } = useTranslation();
                      <img src={appwallet} alt='wallet' width={28} height={28} className='app-wallet-img'></img>
                   </Typography>
                   <Typography sx={{display:'flex',flexDirection:'column'}}>
-                    <Typography sx={{fontWeight:'600',fontSize:'20px'}}>
+                    <Typography sx={{fontWeight:'500',fontSize:'20px'}}>
                      {t('application-benefit-title-two')} 
                     </Typography>
                     <Typography sx={{color:'#707A8A'}}>{t('application-benefit-two')}</Typography>
@@ -317,7 +318,7 @@ const { t } = useTranslation();
                      <img src={appwallet} alt='wallet' width={28} height={28} className='app-wallet-img'></img>
                   </Typography>
                   <Typography sx={{display:'flex',flexDirection:'column'}}>
-                    <Typography sx={{fontWeight:'600',fontSize:'20px'}}>
+                    <Typography sx={{fontWeight:'500',fontSize:'20px'}}>
                      {t('application-benefit-title-three')} 
                     </Typography>
                     <Typography sx={{color:'#707A8A'}}>{t('application-benefit-three')}</Typography>
@@ -337,7 +338,7 @@ const { t } = useTranslation();
       <Box sx={{bgcolor:'white'}}>
         <Container sx={{px:1,pb:'5rem'}}>
           <Box sx={{pb:5,pt:'5rem'}}>
-            <Typography sx={{fontSize:'2.5rem',mb:2,fontWeight:'500'}}>
+            <Typography sx={{fontSize:'2.2rem',mb:2,fontWeight:'500'}}>
               {t('faq')}
             </Typography>
             <Typography sx={{fontSize:'.9rem'}}>

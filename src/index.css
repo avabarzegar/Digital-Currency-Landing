@@ -293,7 +293,9 @@ nav a:hover {
 .application-btn:hover p{
   color:var(--yellow-color) !important;
 }
-
+.css-s01vdy-MuiTypography-root{
+  text-align: center !important;
+}
 /* /app-section */
 
 /* buy-crypto */
