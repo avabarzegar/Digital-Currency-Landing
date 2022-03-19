@@ -64,11 +64,11 @@ export default function Footer(){
                               <Typography>
                               Pouyam Office address
                               <br/>
-                              BN TEKNOLOJİ A.Ş.
+                              BN TECHNOLOGY INC.
                               <br/>
-                              Esentepe Mah. Büyükdere Cad. Ferko Apt. No:175/7
+                              Esentepe Mah. Buyukdere Cad. Ferko Apt. No: 175/7
                               <br/>
-                              Şişli İstanbul
+                              Istanbul
                               </Typography>
                           </Grid>
                           <Grid xs={12}>

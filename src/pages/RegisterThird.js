@@ -221,7 +221,7 @@ const RegisterSchema=Yup.object().shape({
  
   return (
     
-    <Box sx={{bgcolor:'#fafafa'}}>
+    <Box sx={{bgcolor:'#fafafa',py:'4rem'}}>
       <Box className='register-container'>
         <Typography sx={{fontSize:'1.5rem',fontWeight:600,mb:{xs:'.3rem',sm:'24px'}}}>Create a free account</Typography>
         <Box sx={{display:{xs:'block',sm:'none',marginBottom:'2rem'}}}>
@@ -247,8 +247,9 @@ const RegisterSchema=Yup.object().shape({
         }}
       >
         <Form>
-          <Item><Typography sx={{fontSize:'.85rem',color:'#707a8a',borderBottom: '1px solid #eaecef',pb: '5px',px:1,textAlign:{xs:'left',sm:'center'}}}>Account Information</Typography></Item>
-          <Grid container sx={{justifyContent:'space-between',mb:'24px'}}>
+          <Item>
+            <Typography sx={{fontSize:'.85rem',color:'#707a8a',borderBottom: '1px solid #eaecef',pb: '5px',px:1,textAlign:{xs:'left',sm:'center'}}}>Account Information</Typography></Item>
+          <Grid container sx={{justifyContent:'space-between'}}>
             <Grid sm={6} xs={12} item sx={{mb:'1rem'}}>
               <Item>
               <InputLabel sx={{lineHeight: '30px'}} htmlFor='password'>password</InputLabel>    
@@ -306,7 +307,7 @@ const RegisterSchema=Yup.object().shape({
           <Grid container>
             <Grid xs={12}>
               <Item>
-              <Typography sx={{color:'#707a8a',fontSize:'.85rem',borderBottom:'1px solid #eaecef',textAlign:{xs:'left',sm:'center'}}}>Personal Information</Typography>
+              <Typography sx={{color:'#707a8a',fontSize:'.85rem',borderBottom:'1px solid #eaecef',textAlign:{xs:'left',sm:'center'},pb:'5px'}}>Personal Information</Typography>
               </Item>
             </Grid>
             <Grid container>
